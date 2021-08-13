@@ -5,6 +5,8 @@ from twilio.twiml.messaging_response import MessagingResponse
 import os
 from twilio.rest import Client
 
+from collections import defaultdict
+
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -14,12 +16,18 @@ client = Client(account_sid, auth_token)
 
 app = Flask(__name__)
 
-usser_states = {}
+def constant_factory(value):
+    return lambda: value
+
+usser_states = defaultdict(constant_factory("START"))
 
 @app.route('/bot', methods=['POST'])
 def bot():
+    print(request.values)
     incoming_msg = request.values.get('Body', '').lower()
-    incoming_from = request.values.get('from')
+    incoming_from = request.values.get('From')
+
+    state = usser_states.get(incoming_from, "START")
 
     resp = MessagingResponse()
     msg = resp.message()
