@@ -31,11 +31,14 @@ def bot():
 
     state = usser_states.get(incoming_from, "START")
 
-    states_handler = {"START": ["hi", generalActions["start_name"]]}
+    states_handler = {"START": [("hi", generalActions["start_name"])],
+                      "NAME": [("ja", generalActions["name_startpunkt"]),
+                               ("nein", generalActions["name_frage"])]}
 
     for filter, action in states_handler[icoming_state]:
         if incoming_msg == filter:
-            action(client, request.values)
+            new_state = action(client, request.values)
+            usser_states[incoming_from] = new_state
 
 
 if __name__ == '__main__':
