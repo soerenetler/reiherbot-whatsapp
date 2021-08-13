@@ -1,1 +1,1 @@
-web: gunicorn -b :5000 bot:app
+web: gunicorn --worker-tmp-dir /dev/shm -b :8080 bot:app
