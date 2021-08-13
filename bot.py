@@ -2,12 +2,25 @@ from flask import Flask, request
 import requests
 from twilio.twiml.messaging_response import MessagingResponse
 
+import os
+from twilio.rest import Client
+
+
+# Find your Account SID and Auth Token at twilio.com/console
+# and set the environment variables. See http://twil.io/secure
+account_sid = os.environ['TWILIO_ACCOUNT_SID']
+auth_token = os.environ['TWILIO_AUTH_TOKEN']
+client = Client(account_sid, auth_token)
+
 app = Flask(__name__)
 
+usser_states = {}
 
 @app.route('/bot', methods=['POST'])
 def bot():
     incoming_msg = request.values.get('Body', '').lower()
+    incoming_from = request.values.get('from')
+
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
@@ -27,7 +40,13 @@ def bot():
         responded = True
     if not responded:
         msg.body('I only know about famous quotes and cats, sorry!')
-    return str(resp)
+    
+    message = client.messages.create(
+                              body='Hello there!',
+                              from_='whatsapp:+14155238886',
+                              to=incoming_from
+                          )
+    return message
 
 
 if __name__ == '__main__':
