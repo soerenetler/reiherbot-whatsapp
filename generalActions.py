@@ -38,7 +38,27 @@ def name_frage(client, update):
                               to=update["From"]
                           )
         return "NAME_AENDERN"
+
+def welche_route(client, update):
+        client.messages.create(
+                              mediaurl="https://blauedaecher.com/wp-content/uploads/2020/10/Banner3.png",
+                              body='Sehr gut 😊 Welche Route gehen wir heute?',
+                              from_='whatsapp:+14155238886',
+                              to=update["From"]
+                          )
+        return "ROUTE_AUSWAEHLEN"
+
+def weg_zum_bahnhof(client, update):
+    client.messages.create(
+                              body='Kein Problem, ich schicke dir einfach den Standort, von dem aus wir losgehen.',
+                              persistent_action=['geo:52.4090401,12.9724552|Bahnhof Golm'],
+                              from_='whatsapp:+14155238886',
+                              to=update["From"]
+                          )
+    return "STARTPUNKT"
                         
 generalActions={"start_name": start_name,
                 "name_startpunkt": name_startpunkt,
-                "name_frage": name_frage}
+                "name_frage": name_frage,
+                "welche_route": welche_route,
+                "weg_zum_bahnhof": weg_zum_bahnhof}

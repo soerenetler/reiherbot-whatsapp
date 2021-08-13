@@ -33,7 +33,12 @@ def bot():
 
     states_handler = {"START": [("hi", generalActions["start_name"])],
                       "NAME": [("ja", generalActions["name_startpunkt"]),
-                               ("nein", generalActions["name_frage"])]}
+                               ("nein", generalActions["name_frage"])],
+                      "STARTPUNKT": [("ja", generalActions["welche_route"]),
+                                     ("nein", generalActions["weg_zum_bahnhof"])],
+                      "ROUTE_AUSWAEHLEN": [("ja", generalActions["start_name"])]
+
+    }
 
     for filter, action in states_handler[icoming_state]:
         if incoming_msg == filter:
