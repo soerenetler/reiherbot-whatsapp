@@ -54,7 +54,6 @@ def bot():
                               from_='whatsapp:+14155238886',
                               to=incoming_from
                           )
-    return message
 
 
 if __name__ == '__main__':
