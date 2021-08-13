@@ -1,9 +1,9 @@
 from flask import Flask, request
-import requests
-from twilio.twiml.messaging_response import MessagingResponse
 
 import os
 from twilio.rest import Client
+
+from generalActions import generalActions
 
 from collections import defaultdict
 
@@ -26,34 +26,16 @@ def bot():
     print(request.values)
     incoming_msg = request.values.get('Body', '').lower()
     incoming_from = request.values.get('From')
+    incoming_ProfileName = request.values.get('ProfileName')
+    icoming_state = usser_states[incoming_from]
 
     state = usser_states.get(incoming_from, "START")
 
-    resp = MessagingResponse()
-    msg = resp.message()
-    responded = False
-    if 'quote' in incoming_msg:
-        # return a quote
-        r = requests.get('https://api.quotable.io/random')
-        if r.status_code == 200:
-            data = r.json()
-            quote = f'{data["content"]} ({data["author"]})'
-        else:
-            quote = 'I could not retrieve a quote at this time, sorry.'
-        msg.body(quote)
-        responded = True
-    if 'cat' in incoming_msg:
-        # return a cat pic
-        msg.media('https://cataas.com/cat')
-        responded = True
-    if not responded:
-        msg.body('I only know about famous quotes and cats, sorry!')
-    
-    message = client.messages.create(
-                              body='Hello there!',
-                              from_='whatsapp:+14155238886',
-                              to=incoming_from
-                          )
+    states_handler = {"START": ["hi", generalActions["start_name"]]}
+
+    for filter, action in states_handler[icoming_state]:
+        if incoming_msg == filter:
+            action(client, request.values)
 
 
 if __name__ == '__main__':
