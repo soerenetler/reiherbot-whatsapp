@@ -24,12 +24,21 @@ def constant_factory(value):
 
 user_states = defaultdict(constant_factory("START"))
 generalActions = read_action_yaml("actions/general.yml")
+reiherberglActions = read_action_yaml("actions/reiherberg.yml")
+en_reiherbergActions = read_action_yaml("actions/en_reiherberg.yml")
 
 prechecks = [CommandHandler('cancel', generalActions["cancel"]),
              CommandHandler('start', generalActions["start_name"]),
                 ]
 
-states_handler = read_state_yml("states/general.yml", actions={**generalActions}, prechecks=prechecks)
+general_handler = read_state_yml("states/general.yml", actions={**generalActions}, prechecks=prechecks)
+reiherberg_handler = read_state_yml("states/reiherberg.yml", actions={**generalActions}, prechecks=prechecks)
+en_reiherberg_handler = read_state_yml("states/en_reiherberg.yml", actions={**generalActions}, prechecks=prechecks)
+
+states_handler = {**general_handler, 
+                  **reiherberg_handler,
+                  **en_reiherberg_handler}
+
 
 @app.route('/bot', methods=['POST'])
 def bot():

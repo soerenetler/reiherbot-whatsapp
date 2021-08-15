@@ -16,6 +16,10 @@ def read_state_yml(filename, actions={}, prechecks:List=[]):
                     newHandler = MessageHandler(RegexFilter(handler["regex"]), actions[handler["action"]])
                 elif handler["filter"] == "text":
                     newHandler = MessageHandler(TextFilter, actions[handler["action"]])
+                elif handler["filter"] == "voice":
+                    newHandler = MessageHandler(PhotoFilter, actions[handler["action"]])
+                elif handler["filter"] == "photo":
+                    newHandler = MessageHandler(VoiceFilter, actions[handler["action"]])
             elif handler["handler"] == "CommandHandler":
                 newHandler = CommandHandler(handler["command"], actions[handler["action"]])
             elif handler["handler"] == "TypeHandler":
@@ -67,3 +71,11 @@ class RegexFilter:
 class TextFilter:
     def __call__(self, update: WhatsAppUpdate) -> bool:
         return update.Body != ""
+
+class PhotoFilter:
+    def __call__(self, update: WhatsAppUpdate) -> bool:
+        return update.MediaContentType0.startswith("image")
+
+class VoiceFilter:
+    def __call__(self, update: WhatsAppUpdate) -> bool:
+        return update.MediaContentType0.startswith("audio")

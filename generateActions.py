@@ -1,6 +1,7 @@
 from WhatsAppUpdate import WhatsAppUpdate
 import yaml
 
+
 def read_action_yaml(filename, action_functions={}):
     with open(filename) as file:
         yaml_dict = yaml.load(file)
@@ -12,6 +13,7 @@ def read_action_yaml(filename, action_functions={}):
 
     return actions_dict
 
+
 class Action():
     def __init__(self, actions, action_functions={}):
         self.actions = actions
@@ -21,16 +23,24 @@ class Action():
         for item in self.actions:
             if item["type"] == "message":
                 client.messages.create(
-                              body=item["text"].format(**{"name": update.ProfileName, "echo":update.Body}),
-                              from_='whatsapp:+14155238886',
-                              to=update.From
-                          )
-            elif item["type"]=="venue":
+                    body=item["text"].format(
+                        **{"name": update.ProfileName, "echo": update.Body}),
+                    from_='whatsapp:+14155238886',
+                    to=update.From
+                )
+            elif item["type"] == "venue":
                 client.messages.create(
-                              body=item["title"],
-                              persistent_action=['geo:{},{}}|{}'.format(item["latitude"], item["longitude"], item["address"])],
-                              from_='whatsapp:+14155238886',
-                              to=update.From
-                          )
-            elif item["type"]== "return":
+                    body=item["title"],
+                    persistent_action=['geo:{},{}}|{}'.format(
+                        item["latitude"], item["longitude"], item["address"])],
+                    from_='whatsapp:+14155238886',
+                    to=update.From
+                )
+            elif item["type"] == "photo":
+                client.messages.create(
+                    media_url=item["url"],
+                    from_='whatsapp:+14155238886',
+                    to=update.From
+                )
+            elif item["type"] == "return":
                 return item["state"]
