@@ -6,3 +6,4 @@ gunicorn
 Pillow
 pymongo[srv]
 mongoengine
+boto3
