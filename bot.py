@@ -1,3 +1,4 @@
+from generateStates import CommandHandler, read_state_yml
 from generateActions import read_action_yaml
 from WhatsAppUpdate import WhatsAppUpdate
 from flask import Flask, request
@@ -22,7 +23,11 @@ def constant_factory(value):
 
 
 user_states = defaultdict(constant_factory("START"))
-generalActions = read_action_yaml("general.yml")
+generalActions = read_action_yaml("actions/general.yml")
+
+prechecks = [CommandHandler('cancel', generalActions["cancel"]),
+                 CommandHandler('start', generalActions["start_name"]),
+                ]
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -31,15 +36,8 @@ def bot():
     icoming_state = user_states[update.From]
     print("Current state: {}".format(icoming_state))
 
-    states_handler = {"START": [("hi", generalActions["start_name"])],
-                      "NAME": [("ja", generalActions["name_startpunkt"]),
-                               ("nein", generalActions["name_frage"])],
-                      "STARTPUNKT": [("ja", generalActions["welche_route"]),
-                                     ("nein", generalActions["weg_zum_bahnhof"])],
-                      "ROUTE_AUSWAEHLEN": [("ja", generalActions["start_name"])]
+    states_handler = read_state_yml("states/general.yml", actions={**generalActions}, prechecks=prechecks),
 
-                      }
-                      
     for filter, action in states_handler[icoming_state]:
         print("Filter Eval: {}".format(filter))
         if update.Body == filter:
