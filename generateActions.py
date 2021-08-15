@@ -42,5 +42,21 @@ class Action():
                     from_='whatsapp:+14155238886',
                     to=update.From
                 )
+            elif item["type"] == "audio":
+                client.messages.create(
+                    media_url=item["url"],
+                    from_='whatsapp:+14155238886',
+                    to=update.From
+                )
+            elif item["type"] == "poll":
+                message = "*" + item["question"] + "*%0a"
+                numbers = ["1️⃣ ","2️⃣ ","3️⃣ ","4️⃣ ","5️⃣ ","6️⃣ "]
+                for number, option in zip(numbers, item["options"]):
+                    message += number + option + "%0a"
+                client.messages.create(
+                    body=item["question"],
+                    from_='whatsapp:+14155238886',
+                    to=update.From
+                )
             elif item["type"] == "return":
                 return item["state"]
