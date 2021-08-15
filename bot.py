@@ -8,6 +8,8 @@ from twilio.rest import Client
 
 from collections import defaultdict
 
+from actions import reiherbergActions, en_reiherbergActions, writeActions
+
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -23,7 +25,8 @@ def constant_factory(value):
 
 
 user_states = defaultdict(constant_factory("START"))
-generalActions = read_action_yaml("actions/general.yml")
+generalActions = read_action_yaml("actions/general.yml", action_functions={
+                                         **reiherbergActions.action_functions, **writeActions.action_functions})
 reiherberglActions = read_action_yaml("actions/reiherberg.yml")
 en_reiherbergActions = read_action_yaml("actions/en_reiherberg.yml")
 
