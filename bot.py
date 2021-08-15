@@ -21,19 +21,14 @@ def constant_factory(value):
     return lambda: value
 
 
-usser_states = defaultdict(constant_factory("START"))
+user_states = defaultdict(constant_factory("START"))
 
 
 @app.route('/bot', methods=['POST'])
 def bot():
     print(request.values)
-    WhatsAppUpdate(**request.values)
-    incoming_msg = request.values.get('Body', '').lower()
-    incoming_from = request.values.get('From')
-    incoming_ProfileName = request.values.get('ProfileName')
-    icoming_state = usser_states[incoming_from]
-
-    state = usser_states.get(incoming_from, "START")
+    update = WhatsAppUpdate(**request.values)
+    icoming_state = user_states[update.From]
 
     states_handler = {"START": [("hi", generalActions["start_name"])],
                       "NAME": [("ja", generalActions["name_startpunkt"]),
@@ -45,9 +40,9 @@ def bot():
                       }
 
     for filter, action in states_handler[icoming_state]:
-        if incoming_msg == filter:
-            new_state = action(client, WhatsAppUpdate)
-            usser_states[incoming_from] = new_state
+        if update.From == filter:
+            new_state = action(client, update)
+            user_states[update.From] = new_state
 
 
 if __name__ == '__main__':
