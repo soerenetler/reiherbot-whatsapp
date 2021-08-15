@@ -146,6 +146,5 @@ action_functions = {"send_bahnhof_gif": send_bahnhof_gif,
                     "eval_kirche_wortraetsel": eval_kirche_wortraetsel,
                     "eval_storchenbank": eval_storchenbank,
                     "reiherberg_medaille": reiherberg_medaille,
-                    "bahnhof_timetable": bahnhof_timetable,
                     "eval_quiz": eval_quiz
                     }
