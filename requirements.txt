@@ -1,4 +1,3 @@
-yaml
 twilio
 flask
 requests
