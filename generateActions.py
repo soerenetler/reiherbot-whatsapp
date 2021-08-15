@@ -58,5 +58,8 @@ class Action():
                     from_='whatsapp:+14155238886',
                     to=update.From
                 )
+            elif item["type"] == "function":
+                self.action_functions[item["func"]](client, update)
+
             elif item["type"] == "return":
                 return item["state"]
