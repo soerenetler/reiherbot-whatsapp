@@ -24,6 +24,7 @@ usser_states = defaultdict(constant_factory("START"))
 @app.route('/bot', methods=['POST'])
 def bot():
     print(request.values)
+    WhatsAppUpdate(**request.values)
     incoming_msg = request.values.get('Body', '').lower()
     incoming_from = request.values.get('From')
     incoming_ProfileName = request.values.get('ProfileName')
@@ -48,3 +49,23 @@ def bot():
 
 if __name__ == '__main__':
     app.run()
+
+
+class WhatsAppUpdate:
+
+#CombinedMultiDict([ImmutableMultiDict([]), ImmutableMultiDict([('SmsMessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('NumMedia', '0'), ('ProfileName', 'Sören'), ('SmsSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('WaId', '4917652163847'), ('SmsStatus', 'received'), ('Body', 'Hi'), ('To', 'whatsapp:+14155238886'), ('NumSegments', '1'), ('MessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('AccountSid', 'AC8f3944b5604c359ee4e1c882e64765e2'), ('From', 'whatsapp:+4917652163847'), ('ApiVersion', '2010-04-01')])])
+
+    def __init__(self, SmsMessageSid, NumMedia, ProfileName, SmsSid, WaId, SmsStatus, Body, To, NumSegments, MessageSid, AccountSid, From, ApiVersion) -> None:
+        self.SmsMessageSid = SmsMessageSid
+        self.NumMedia = NumMedia
+        self.ProfileName = ProfileName
+        self.SmsSid = SmsSid
+        self.WaId = WaId
+        self.SmsStatus = SmsStatus
+        self.Body = Body
+        self.To = To
+        self.NumSegments = NumSegments
+        self.MessageSid = MessageSid
+        self.AccountSid = AccountSid
+        self.From = From
+        self.ApiVersion = ApiVersion
