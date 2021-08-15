@@ -26,8 +26,10 @@ user_states = defaultdict(constant_factory("START"))
 generalActions = read_action_yaml("actions/general.yml")
 
 prechecks = [CommandHandler('cancel', generalActions["cancel"]),
-                 CommandHandler('start', generalActions["start_name"]),
+             CommandHandler('start', generalActions["start_name"]),
                 ]
+
+states_handler = read_state_yml("states/general.yml", actions={**generalActions}, prechecks=prechecks)
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -35,8 +37,6 @@ def bot():
     update = WhatsAppUpdate(**request.values)
     icoming_state = user_states[update.From]
     print("Current state: {}".format(icoming_state))
-
-    states_handler = read_state_yml("states/general.yml", actions={**generalActions}, prechecks=prechecks),
 
     for filter, action in states_handler[icoming_state]:
         print("Filter Eval: {}".format(filter))
