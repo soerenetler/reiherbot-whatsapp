@@ -29,6 +29,7 @@ def bot():
     print(request.values)
     update = WhatsAppUpdate(**request.values)
     icoming_state = user_states[update.From]
+    print("Current state: {}".format(icoming_state))
 
     states_handler = {"START": [("hi", generalActions["start_name"])],
                       "NAME": [("ja", generalActions["name_startpunkt"]),
@@ -38,9 +39,11 @@ def bot():
                       "ROUTE_AUSWAEHLEN": [("ja", generalActions["start_name"])]
 
                       }
-
+                      
     for filter, action in states_handler[icoming_state]:
+        print("Filter Eval: {}".format(filter))
         if update.Body == filter:
+            print("Filter True: {}".format(filter))
             new_state = action(client, update)
             user_states[update.From] = new_state
 
