@@ -100,14 +100,14 @@ ROUTE_AUSWAEHLEN:
 REIHERBERGROUTE_BESTAETIGEN:
   - handler: CommandHandler
     command: weiter
-    action: frage_bahnhof_gif
+    action: start_name
   - handler: CommandHandler
     command: Ja
-    action: frage_bahnhof_gif
+    action: start_name
   - handler: MessageHandler
     filter: regex
     regex: "^(Ja, ich bin bereit 🏁|Ja)$"
-    action: frage_bahnhof_gif
+    action: start_name
 
   - handler: CommandHandler
     command: Nein
@@ -124,14 +124,14 @@ REIHERBERGROUTE_BESTAETIGEN:
 EN_REIHERBERGROUTE_BESTAETIGEN:
   - handler: CommandHandler
     command: weiter
-    action: en_frage_bahnhof_gif
+    action: start_name
   - handler: CommandHandler
     command: "yes"
-    action: en_frage_bahnhof_gif
+    action: start_name
   - handler: MessageHandler
     filter: regex
     regex: "^(Yes, I am ready 🏁|Ja|yes|Yes)$"
-    action: en_frage_bahnhof_gif
+    action: start_name
 
   - handler: CommandHandler
     command: "no"
