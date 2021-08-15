@@ -21,7 +21,7 @@ class Action():
         for item in self.actions:
             if item["type"] == "message":
                 client.messages.create(
-                              body=item["text"],
+                              body=item["text"].format(**{"name": update.ProfileName, "echo":update.Body}),
                               from_='whatsapp:+14155238886',
                               to=update.From
                           )
