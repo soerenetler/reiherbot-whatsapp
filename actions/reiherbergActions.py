@@ -1,6 +1,4 @@
 import os
-from telegram import (Update, CallbackQuery)
-from telegram.ext import CallbackContext, ConversationHandler
 from PIL import Image
 import re
 
@@ -21,8 +19,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-def send_bahnhof_gif(update, context):
-    im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
+def send_bahnhof_gif(client, update: WhatsAppUpdate):
+    #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
 
     im_file = BytesIO(im_bytes)  # convert image to file-like object
     im1 = Image.open(im_file)   # img is now PIL Image object
@@ -116,9 +114,9 @@ def eval_kirche_wortraetsel(client, update: WhatsAppUpdate):
 
 
 def eval_storchenbank(client, update: WhatsAppUpdate):
-    antwort = update.Body
-    echter_wert = "2012"
-    if antwort.lower() == echter_wert.lower():
+    antwort = int(re.findall(r"\d{1,}", update.Body)[0])
+    echter_wert = 2012
+    if antwort.lower() == echter_wert:
         client.messages.create(
             body='Du hast die Tafel also entdeckt! Dort werden die Rückkehrzeiten und der Nachwuchs des Storchenpaares festgehalten.'.format(
                 name=update.ProfileName),
