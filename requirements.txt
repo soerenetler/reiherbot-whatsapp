@@ -3,3 +3,6 @@ twilio
 flask
 requests
 gunicorn
+Pillow
+pymongo[srv]
+mongoengine

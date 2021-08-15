@@ -1,6 +1,4 @@
 from WhatsAppUpdate import WhatsAppUpdate
-from telegram import (ParseMode, InputFile, InputMediaPhoto, ReplyKeyboardMarkup, ReplyKeyboardRemove, KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup, Poll, Update, CallbackQuery)
-from telegram.ext import CallbackContext, ConversationHandler
 from PIL import Image
 import re
 
