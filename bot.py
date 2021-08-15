@@ -40,7 +40,7 @@ def bot():
                       }
 
     for filter, action in states_handler[icoming_state]:
-        if update.From == filter:
+        if update.Body == filter:
             new_state = action(client, update)
             user_states[update.From] = new_state
 
