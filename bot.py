@@ -27,8 +27,10 @@ def constant_factory(value):
 user_states = defaultdict(constant_factory("START"))
 generalActions = read_action_yaml("actions/general.yml", action_functions={
                                          **reiherbergActions.action_functions, **writeActions.action_functions})
-reiherberglActions = read_action_yaml("actions/reiherberg.yml")
-en_reiherbergActions = read_action_yaml("actions/en_reiherberg.yml")
+reiherberglActions = read_action_yaml("actions/reiherberg.yml", action_functions={
+                                         **reiherbergActions.action_functions, **writeActions.action_functions})
+en_reiherbergActions = read_action_yaml("actions/en_reiherberg.yml", action_functions={
+                                         **en_reiherbergActions.action_functions, **writeActions.action_functions})
 
 prechecks = [CommandHandler('cancel', generalActions["cancel"]),
              CommandHandler('start', generalActions["start_name"]),

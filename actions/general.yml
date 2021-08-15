@@ -102,8 +102,6 @@ datenschutz_tipp:
         - text: "Lieber nicht ⚔️"
 
 name_aendern:
-  - type: function
-    func: change_name
   - type: message
     text: 'Ich nenne dich {name}, okay?'
     ReplyKeyboardMarkup:
@@ -123,14 +121,8 @@ cancel:
     func: return_end
 
 start_name:
-  - type: function
-    func: entry_conversation
-  - type: function
-    func: default_data
   - type: sticker
     id: 'CAACAgIAAxkBAAIgdmERAUCmyNVG8wwMKjbg2BbjaDT-AALuDQACqfWJSH_X4Qk1m_U_IAQ'
-  - type: function
-    func: default_name
   - type: message
     text: 'Hi, ich bin Ronni der Reiher! Ich führe dich heute durch Golm.'
   - type: message
@@ -142,8 +134,6 @@ start_name:
     state: NAME
   
 name_startpunkt:
-  - type: function
-    func: change_data
   - type: message
     text: Super!
   - type: message
