@@ -16,10 +16,13 @@ client = Client(account_sid, auth_token)
 
 app = Flask(__name__)
 
+
 def constant_factory(value):
     return lambda: value
 
+
 usser_states = defaultdict(constant_factory("START"))
+
 
 @app.route('/bot', methods=['POST'])
 def bot():
@@ -39,11 +42,11 @@ def bot():
                                      ("nein", generalActions["weg_zum_bahnhof"])],
                       "ROUTE_AUSWAEHLEN": [("ja", generalActions["start_name"])]
 
-    }
+                      }
 
     for filter, action in states_handler[icoming_state]:
         if incoming_msg == filter:
-            new_state = action(client, request.values)
+            new_state = action(client, WhatsAppUpdate)
             usser_states[incoming_from] = new_state
 
 
@@ -53,9 +56,12 @@ if __name__ == '__main__':
 
 class WhatsAppUpdate:
 
-#CombinedMultiDict([ImmutableMultiDict([]), ImmutableMultiDict([('SmsMessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('NumMedia', '0'), ('ProfileName', 'Sören'), ('SmsSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('WaId', '4917652163847'), ('SmsStatus', 'received'), ('Body', 'Hi'), ('To', 'whatsapp:+14155238886'), ('NumSegments', '1'), ('MessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('AccountSid', 'AC8f3944b5604c359ee4e1c882e64765e2'), ('From', 'whatsapp:+4917652163847'), ('ApiVersion', '2010-04-01')])])
-
-    def __init__(self, SmsMessageSid, NumMedia, ProfileName, SmsSid, WaId, SmsStatus, Body, To, NumSegments, MessageSid, AccountSid, From, ApiVersion) -> None:
+    #CombinedMultiDict([ImmutableMultiDict([]), ImmutableMultiDict([('SmsMessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('NumMedia', '0'), ('ProfileName', 'Sören'), ('SmsSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('WaId', '4917652163847'), ('SmsStatus', 'received'), ('Body', 'Hi'), ('To', 'whatsapp:+14155238886'), ('NumSegments', '1'), ('MessageSid', 'SM1cea0a82154a503875f26e1898d972f2'), ('AccountSid', 'AC8f3944b5604c359ee4e1c882e64765e2'), ('From', 'whatsapp:+4917652163847'), ('ApiVersion', '2010-04-01')])])
+    #CombinedMultiDict([ImmutableMultiDict([]), ImmutableMultiDict([('MediaContentType0', 'image/jpeg'), ('SmsMessageSid', 'MM94942a74f3cfc4fceed98eb6ec1ab15b'), ('NumMedia', '1'), ('ProfileName', 'Sören'), ('SmsSid', 'MM94942a74f3cfc4fceed98eb6ec1ab15b'), ('WaId', '4917652163847'), ('SmsStatus', 'received'), ('Body', ''), ('To', 'whatsapp:+14155238886'), ('NumSegments', '1'), ('MessageSid', 'MM94942a74f3cfc4fceed98eb6ec1ab15b'), ('AccountSid', 'AC8f3944b5604c359ee4e1c882e64765e2'), ('From', 'whatsapp:+4917652163847'), ('MediaUrl0', 'https://api.twilio.com/2010-04-01/Accounts/AC8f3944b5604c359ee4e1c882e64765e2/Messages/MM94942a74f3cfc4fceed98eb6ec1ab15b/Media/ME1eb56f5a20a667e7f4dc8428c04c1c36'), ('ApiVersion', '2010-04-01')])])
+    # CombinedMultiDict([ImmutableMultiDict([]), ImmutableMultiDict([('Latitude', '52.406563'), ('Longitude', '12.969897'), ('SmsMessageSid', 'SM69ee3cde6532bdcedc2c44b83ee53f41'), ('NumMedia', '0'), ('ProfileName', 'Sören'), ('SmsSid', 'SM69ee3cde6532bdcedc2c44b83ee53f41'), ('WaId', '4917652163847'), ('SmsStatus', 'received'), ('Body', ''), ('To', 'whatsapp:+14155238886'), ('NumSegments', '1'), ('MessageSid', 'SM69ee3cde6532bdcedc2c44b83ee53f41'), ('AccountSid', 'AC8f3944b5604c359ee4e1c882e64765e2'), ('From', 'whatsapp:+4917652163847'), ('ApiVersio
+    def __init__(self, Latitude, Longitude, SmsMessageSid, NumMedia, ProfileName, SmsSid, WaId, SmsStatus, Body, To, NumSegments, MessageSid, AccountSid, From, ApiVersion, MediaContentType0, MediaUrl0) -> None:
+        self.Latitude = Latitude
+        self.Longitude = Longitude
         self.SmsMessageSid = SmsMessageSid
         self.NumMedia = NumMedia
         self.ProfileName = ProfileName
@@ -69,3 +75,5 @@ class WhatsAppUpdate:
         self.AccountSid = AccountSid
         self.From = From
         self.ApiVersion = ApiVersion
+        self.MediaContentType0 = MediaContentType0
+        self.MediaUrl0 = MediaUrl0
