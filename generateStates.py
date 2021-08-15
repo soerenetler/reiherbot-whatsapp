@@ -1,5 +1,4 @@
 from typing import List
-from telegram import Update
 import yaml
 from WhatsAppUpdate import WhatsAppUpdate
 
