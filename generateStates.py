@@ -48,11 +48,10 @@ class CommandHandler:
         self.callback = callback
 
     def check_update(self, update: WhatsAppUpdate):
-        text_list = update.Body.split()
-        if text_list[0].lower() != "/" + self.command:
-            return None
-        else:
-            return text_list[1:]
+        if update.Body:
+            text_list = update.Body.split()
+            if text_list[0].lower() == "/" + self.command:
+                return text_list[1:]
 
 class TypeHandler:
     def __init__(self, type_, callback):
