@@ -52,11 +52,11 @@ def bot():
     icoming_state = user_states[update.From]
     print("Current state: {}".format(icoming_state))
 
-    for filter, action in states_handler[icoming_state]:
+    for handler in states_handler[icoming_state]:
         print("Filter Eval: {}".format(filter))
-        if update.Body == filter:
+        if handler.check_update(update):
             print("Filter True: {}".format(filter))
-            new_state = action(client, update)
+            new_state = handler.callback(client, update)
             user_states[update.From] = new_state
 
 
