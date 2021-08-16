@@ -23,7 +23,7 @@ def write_photo(client, update: WhatsAppUpdate, bucket, folder):
 
     s3_client.put_object(Bucket=bucket,
                       Key= folder + "/" + str(datetime.now())+"_"+str(user_id) + "_" + name + '.jpg',
-                      Body= requests.get(update.MediaUrl0, allow_redirects=True),
+                      Body= requests.get(update.MediaUrl0, allow_redirects=True).content,
                       ACL='private',
                       #Metadata={
                       #    'x-amz-meta-my-key': 'your-value'
@@ -50,7 +50,7 @@ def write_voice(client, update: WhatsAppUpdate, bucket, folder):
 
     s3_client.put_object(Bucket=bucket,
                     Key= folder + "/" + str(datetime.now())+"_"+str(user_id) + "_" + name + '.mp3',
-                    Body=requests.get(update.MediaUrl0, allow_redirects=True),
+                    Body=requests.get(update.MediaUrl0, allow_redirects=True).content,
                     ACL='private',
                     #Metadata={
                     #    'x-amz-meta-my-key': 'your-value'
