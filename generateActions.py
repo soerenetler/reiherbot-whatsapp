@@ -54,7 +54,7 @@ class Action():
                 for number, option in zip(numbers, item["options"]):
                     message += number + option + "%0a"
                 client.messages.create(
-                    body=item["question"],
+                    body=message,
                     from_='whatsapp:+14155238886',
                     to=update.From
                 )
