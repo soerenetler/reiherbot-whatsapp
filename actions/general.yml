@@ -46,7 +46,7 @@ start_reiherberg_route_tipp:
 
 welche_route:
   - type: photo
-    file: assets/Infografik02.jpg
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Infografik02.jpg"
   - type: message
     text: Sehr gut 😊 Welche Route gehen wir heute?
     ReplyKeyboardMarkup:
