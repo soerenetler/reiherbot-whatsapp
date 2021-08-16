@@ -44,14 +44,12 @@ class MessageHandler:
 
 class CommandHandler:
     def __init__(self, command, callback):
-        self.command = command.lower()
+        self.command = command
         self.callback = callback
 
     def check_update(self, update: WhatsAppUpdate):
-        if update.Body:
-            text_list = update.Body.split()
-            if text_list[0].lower() == "/" + self.command:
-                return text_list[1:]
+        if update.Body == "/" + self.command:
+            return True
 
 class TypeHandler:
     def __init__(self, type_, callback):
