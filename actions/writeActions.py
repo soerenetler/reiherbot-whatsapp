@@ -58,9 +58,9 @@ def write_voice(client, update: WhatsAppUpdate, bucket, folder):
                     )
 
 def write(client, update: WhatsAppUpdate, bucket, folder):
-    if update.MediaContentType0.startswith("audio"):
+    if update.MediaContentType0 and update.MediaContentType0.startswith("audio"):
         write_voice(client, update, bucket, folder)
-    elif update.MediaContentType0.startswith("image"):
+    elif update.MediaContentType0 and update.MediaContentType0.startswith("image"):
         write_photo(client, update, bucket, folder)
     elif update.Body!= "":
         write_message(client, update, bucket, folder)
