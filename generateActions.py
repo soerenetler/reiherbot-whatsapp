@@ -31,7 +31,7 @@ class Action():
             elif item["type"] == "venue":
                 client.messages.create(
                     body=item["title"],
-                    persistent_action=['geo:{},{}}|{}'.format(
+                    persistent_action=['geo:{},{}|{}'.format(
                         item["latitude"], item["longitude"], item["address"])],
                     from_='whatsapp:+14155238886',
                     to=update.From
