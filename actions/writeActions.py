@@ -9,7 +9,7 @@ config = ConfigParser()
 config.read("config.ini")
 
 session = boto3.session.Session()
-client = session.client('s3',
+s3_client = session.client('s3',
                         region_name=config["space"]["region_name"],
                         endpoint_url=config["space"]["endpoint_url"],
                         aws_access_key_id=os.getenv('SPACES_KEY'),
@@ -21,7 +21,7 @@ def write_photo(client, update: WhatsAppUpdate, bucket, folder):
     name = update.ProfileName
     update.MediaUrl0
 
-    client.put_object(Bucket=bucket,
+    s3_client.put_object(Bucket=bucket,
                       Key= folder + "/" + str(datetime.now())+"_"+str(user_id) + "_" + name + '.jpg',
                       Body= requests.get(update.MediaUrl0, allow_redirects=True),
                       ACL='private',
@@ -35,7 +35,7 @@ def write_message(client, update: WhatsAppUpdate, bucket, folder):
     name = update.ProfileName
     message = update.Body
 
-    client.put_object(Bucket=bucket,
+    s3_client.put_object(Bucket=bucket,
                       Key= folder + "/" + str(datetime.now())+"_"+str(user_id) + "_" + name + '.txt',
                       Body=message,
                       ACL='private',
@@ -48,7 +48,7 @@ def write_voice(client, update: WhatsAppUpdate, bucket, folder):
     user_id = update.WaId
     name = update.ProfileName
 
-    client.put_object(Bucket=bucket,
+    s3_client.put_object(Bucket=bucket,
                     Key= folder + "/" + str(datetime.now())+"_"+str(user_id) + "_" + name + '.mp3',
                     Body=requests.get(update.MediaUrl0, allow_redirects=True),
                     ACL='private',
