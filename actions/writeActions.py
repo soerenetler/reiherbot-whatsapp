@@ -17,8 +17,8 @@ client = session.client('s3',
 
 
 def write_photo(client, update: WhatsAppUpdate, bucket, folder):
-    user_id = update.effective_user.id
-    name = update.effective_user.name
+    user_id = update.WaId
+    name = update.ProfileName
     update.MediaUrl0
 
     client.put_object(Bucket=bucket,
