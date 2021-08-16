@@ -44,7 +44,7 @@ class Action():
                 )
             elif item["type"] == "audio":
                 client.messages.create(
-                    media_url=item["url"],
+                    media_url=[item["url"]],
                     from_='whatsapp:+14155238886',
                     to=update.From
                 )
