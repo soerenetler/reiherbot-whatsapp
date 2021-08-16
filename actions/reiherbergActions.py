@@ -22,14 +22,15 @@ logger = logging.getLogger(__name__)
 def send_bahnhof_gif(client, update: WhatsAppUpdate):
     #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
 
-    im_file = BytesIO(im_bytes)  # convert image to file-like object
-    im1 = Image.open(im_file)   # img is now PIL Image object
-    im2 = Image.open('assets/bahnhof_alt.jpg')
+    #)  # convert image to file-like object
+    #im1 = Image.open(im_file)   # img is now PIL Image object
+    #im2 = Image.open('assets/bahnhof_alt.jpg')
 
-    gif = utils.generate_gif(im1, im2)
+    #gif = utils.generate_gif(im1, im2)
 
     # TODO send gif
     # update.message.reply_document(gif)
+    pass
 
 
 def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate):
