@@ -25,20 +25,20 @@ def constant_factory(value):
 
 
 user_states = defaultdict(constant_factory("START"))
-generalActions = read_action_yaml("actions/general.yml", action_functions={
+general_actions = read_action_yaml("actions/general.yml", action_functions={
                                          **reiherbergActions.action_functions, **writeActions.action_functions})
-reiherberglActions = read_action_yaml("actions/reiherberg.yml", action_functions={
+reiherberg_actions = read_action_yaml("actions/reiherberg.yml", action_functions={
                                          **reiherbergActions.action_functions, **writeActions.action_functions})
-en_reiherbergActions = read_action_yaml("actions/en_reiherberg.yml", action_functions={
+en_reiherberg_actions = read_action_yaml("actions/en_reiherberg.yml", action_functions={
                                          **en_reiherbergActions.action_functions, **writeActions.action_functions})
 
-prechecks = [CommandHandler('cancel', generalActions["cancel"]),
-             CommandHandler('start', generalActions["start_name"]),
+prechecks = [CommandHandler('cancel', general_actions["cancel"]),
+             CommandHandler('start', general_actions["start_name"]),
                 ]
 
-general_handler = read_state_yml("states/general.yml", actions={**generalActions, **reiherberglActions, **en_reiherbergActions}, prechecks=prechecks)
-reiherberg_handler = read_state_yml("states/reiherberg.yml", actions={**generalActions}, prechecks=prechecks)
-en_reiherberg_handler = read_state_yml("states/en_reiherberg.yml", actions={**generalActions}, prechecks=prechecks)
+general_handler = read_state_yml("states/general.yml", actions={**general_actions, **reiherberg_actions, **en_reiherberg_actions}, prechecks=prechecks)
+reiherberg_handler = read_state_yml("states/reiherberg.yml", actions={**general_actions, **reiherberg_actions, **en_reiherberg_actions}, prechecks=prechecks)
+en_reiherberg_handler = read_state_yml("states/en_reiherberg.yml", actions={**general_actions, **reiherberg_actions, **en_reiherberg_actions}, prechecks=prechecks)
 
 states_handler = {**general_handler, 
                   **reiherberg_handler,
