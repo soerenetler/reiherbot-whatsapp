@@ -57,7 +57,8 @@ def bot():
         if handler.check_update(update):
             print("Filter True: {}".format(filter))
             new_state = handler.callback(client, update)
-            user_states[update.From] = new_state
+            if new_state:
+                user_states[update.From] = new_state
 
 
 if __name__ == '__main__':
