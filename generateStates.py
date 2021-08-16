@@ -44,7 +44,7 @@ class MessageHandler:
 
 class CommandHandler:
     def __init__(self, command, callback):
-        self.command = command
+        self.command = command.lower()
         self.callback = callback
 
     def check_update(self, update: WhatsAppUpdate):
