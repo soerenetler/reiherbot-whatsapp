@@ -59,6 +59,7 @@ def bot():
             new_state = handler.callback(client, update)
             if new_state:
                 user_states[update.From] = new_state
+            break
 
 
 if __name__ == '__main__':
