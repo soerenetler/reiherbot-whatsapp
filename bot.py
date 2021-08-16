@@ -53,9 +53,9 @@ def bot():
     print("Current state: {}".format(icoming_state))
 
     for handler in states_handler[icoming_state]:
-        print("Filter Eval: {}".format(filter))
+        print("Filter Eval: {}".format(handler))
         if handler.check_update(update):
-            print("Filter True: {}".format(filter))
+            print("Filter True: {}".format(handler))
             new_state = handler.callback(client, update)
             if new_state:
                 user_states[update.From] = new_state

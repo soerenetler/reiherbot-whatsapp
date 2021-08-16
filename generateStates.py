@@ -1,6 +1,7 @@
 from typing import List
 import yaml
 from WhatsAppUpdate import WhatsAppUpdate
+import re
 
 def read_state_yml(filename, actions={}, prechecks:List=[]):
     with open(filename) as file:
@@ -48,7 +49,7 @@ class CommandHandler:
 
     def check_update(self, update: WhatsAppUpdate):
         text_list = update.Body.split()
-        if text_list[0].lower() == "/" + self.command:
+        if text_list[0].lower() != "/" + self.command:
             return None
         else:
             return text_list[1:]
@@ -66,7 +67,7 @@ class RegexFilter:
         self.regex = regex
 
     def __call__(self, update: WhatsAppUpdate) -> bool:
-        pass
+        return re.match(self.regex, update.Body)
 
 class TextFilter:
     def __call__(self, update: WhatsAppUpdate) -> bool:
