@@ -1,7 +1,7 @@
 from generateStates import CommandHandler, read_state_yml
 from generateActions import read_action_yaml
 from WhatsAppUpdate import WhatsAppUpdate
-from flask import Flask, request
+from flask import Flask, request, Response
 
 import os
 from twilio.rest import Client
@@ -60,7 +60,7 @@ def bot():
             if new_state:
                 user_states[update.From] = new_state
             break
-
+    return Response(status=200)
 
 if __name__ == '__main__':
     app.run()
