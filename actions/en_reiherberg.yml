@@ -75,7 +75,7 @@ en_frage_bahnhof_aufloesung:
 
 en_info_bahnhof:
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Bahnhof.mp3"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -231,7 +231,7 @@ en_info_weinmeister:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Weinmeisterstrae.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer Wein.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
   - type: message
@@ -283,7 +283,7 @@ en_fehlerbild_reiherberg_aufloesung:
 
 en_info_supermarkt:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Supermarkt.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
     title: "Supermarkt Golm"
     performer: "Reiherbot"
   - type: message
@@ -313,7 +313,7 @@ en_aufstieg_reiherberg:
 
 en_info_sage_reiherberg:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Sage Entstehung des Reiherbergs.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
     title: "Reiherberg Sage"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -354,7 +354,7 @@ en_schaetzfrage_reiherberg_aufloesung:
 
 en_info_reiherberg:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Reiherberg.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
     title: "Reiherberg"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -500,7 +500,7 @@ en_kirche_aufloesung:
 
 en_info_kirche:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Kaiser Friedrich-Kirche.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
     title: "Kaiser-Friedrich-Kirche"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -553,7 +553,7 @@ en_frage_storchenbank_aufloesung:
 
 en_info_kapelle:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Kapelle.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die alte Kapelle.mp3
     title: "Kapelle"
     performer: "Reiherbot"
   - type: message
@@ -601,7 +601,7 @@ en_info_schule:
   - type: photo
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Schule 1925.PNG"
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Schule und Rodelbahn.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/08_Sommerrodelbahn.mp3
     title: "Schule und Rodelbahn"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -671,7 +671,7 @@ en_frage_feuerwehr_aufloesung:
 
 en_info_feuerwehr:
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/Freiwillige Feuerwehr.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/09_Feuerwehrfrauen.mp3
     title: "Voluntary fire brigade "
     performer: "Reiherbot"
   - type: message
