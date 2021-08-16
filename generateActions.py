@@ -59,7 +59,8 @@ class Action():
                     to=update.From
                 )
             elif item["type"] == "function":
-                self.action_functions[item["func"]](client, update)
+                arguments = {i:item[i] for i in item if i!='type' and i!='func'}
+                self.action_functions[item["func"]](client, update, **arguments)
 
             elif item["type"] == "return":
                 return item["state"]
