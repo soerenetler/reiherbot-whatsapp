@@ -2,8 +2,10 @@ from WhatsAppUpdate import WhatsAppUpdate
 import boto3
 from datetime import datetime
 import os
-from configparser import ConfigParser
+
 import requests
+
+from configparser import ConfigParser
 
 config = ConfigParser()
 config.read("config.ini")

@@ -1,6 +1,11 @@
 from WhatsAppUpdate import WhatsAppUpdate
 import yaml
 
+from configparser import ConfigParser
+
+config = ConfigParser()
+config.read("config.ini")
+
 
 def read_action_yaml(filename, action_functions={}):
     with open(filename) as file:
@@ -26,7 +31,7 @@ class Action():
                 client.messages.create(
                     body=item["text"].format(
                         **{"name": update.ProfileName, "echo": update.Body}),
-                    from_='whatsapp:+14155238886',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
             elif item["type"] == "venue":
@@ -34,19 +39,19 @@ class Action():
                     body=item["title"],
                     persistent_action=['geo:{},{}|{}'.format(
                         item["latitude"], item["longitude"], item["address"])],
-                    from_='whatsapp:+14155238886',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
             elif item["type"] == "photo":
                 client.messages.create(
                     media_url=item["url"],
-                    from_='whatsapp:+14155238886',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
             elif item["type"] == "audio":
                 client.messages.create(
                     media_url=[item["url"]],
-                    from_='whatsapp:+14155238886',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
             elif item["type"] == "poll":
@@ -56,7 +61,7 @@ class Action():
                     message += number + option + "%0a"
                 client.messages.create(
                     body=message,
-                    from_='whatsapp:+14155238886',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
             elif item["type"] == "function":

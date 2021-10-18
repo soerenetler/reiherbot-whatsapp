@@ -14,6 +14,11 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+from configparser import ConfigParser
+
+config = ConfigParser()
+config.read("config.ini")
+
 def send_bahnhof_gif(client, update: WhatsAppUpdate):
     #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
 
@@ -32,19 +37,19 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate):
     if schaetzung == echter_wert:
         client.messages.create(
             body='Nicht schlecht! (Das ist brandenburgisch für "gut gemacht!") 😉',
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     elif schaetzung >= echter_wert-echter_wert*0.2 and schaetzung <= echter_wert+echter_wert*0.2:
         client.messages.create(
             body='Du bist schon nah dran!',
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
             body='Nicht ganz!',
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
 
@@ -54,19 +59,19 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate):
     if schaetzung == echter_wert:
         client.messages.create(
             body='Richtig!'.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     elif schaetzung >= echter_wert-echter_wert*0.1 and schaetzung <= echter_wert+echter_wert*0.1:
         client.messages.create(
             body='Fast!'.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
             body='Knapp daneben!'.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
 
@@ -77,13 +82,13 @@ def eval_kirche_wortraetsel(client, update: WhatsAppUpdate):
     if re.sub('\W+', '', antwort.lower()) == re.sub('\W+', '', echter_wert.lower()):
         client.messages.create(
             body='Richtig!'.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
             body='Fast!'.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
 
@@ -94,14 +99,14 @@ def eval_storchenbank(client, update: WhatsAppUpdate):
         client.messages.create(
             body='Du hast die Tafel also entdeckt! Dort werden die Rückkehrzeiten und der Nachwuchs des Storchenpaares festgehalten.'.format(
                 name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
             body='Fast! Neben der Storchenbank findest du eine Tafel, auf der die Rückkehrzeiten und der Nachwuchs des Storchenpaares festgehalten werden.'.format(
                 name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
 
@@ -120,7 +125,7 @@ def reiherberg_medaille(client, update: WhatsAppUpdate):
     #except:
     client.messages.create(
     media_url="https://reiherbot-assets.fra1.digitaloceanspaces.com/Skyline_02_gelb.png",
-    from_='whatsapp:+14155238886',
+    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
     to=update.From
 )
 
@@ -130,13 +135,13 @@ def eval_quiz(client, update: WhatsAppUpdate, correct_option_id:int, correct_ans
         #    update.poll_answer.user.send_sticker(correct_answer_sticker)
         client.messages.create(
             body=correct_answer_text.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
             body=wrong_answer_text.format(name=update.ProfileName),
-            from_='whatsapp:+14155238886',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
 
