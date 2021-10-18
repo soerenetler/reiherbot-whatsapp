@@ -4,7 +4,8 @@ import yaml
 
 def read_action_yaml(filename, action_functions={}):
     with open(filename) as file:
-        yaml_dict = yaml.load(file)
+        yaml_dict = yaml.load(file, Loader=yaml.FullLoader)
+
 
     actions_dict = {}
 
