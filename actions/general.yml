@@ -21,7 +21,7 @@ start:
       - text: "Auf Deutsch 🥨"
       - text: "In English 💂‍♀️"
   - type: return
-    state: SPRACHE
+    state: START
 
 sprache_tipp:
   - type: message

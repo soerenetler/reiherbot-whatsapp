@@ -1,4 +1,4 @@
-SPRACHE:
+START:
   - handler: MessageHandler
     filter: regex
     regex: "^(Englisch|English|In English 💂‍♀️)$"
