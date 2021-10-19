@@ -1,11 +1,23 @@
-START:
+SPRACHE:
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Englisch|English|In English 💂‍♀️)$"
+    action: en_name
   - handler: CommandHandler
-    command: start
-    action: start_name
+    command: english
+    action: en_name
+
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Deutsch|Auf Deutsch 🥨)$"
+    action: name
+  - handler: CommandHandler
+    command: deutsch
+    action: name
 
   - handler: TypeHandler
     type: Update
-    action: start_name
+    action: sprache_tipp
 
 NAME:
   - handler: MessageHandler
@@ -26,7 +38,28 @@ NAME:
 
   - handler: TypeHandler
     type: Update
-    action: datenschutz_tipp
+    action: name_tipp
+
+EN_NAME:
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(No, better another way! 👻|No|Ups, not quite right 🙈)$"
+    action: en_name_frage
+  - handler: CommandHandler
+    command: "no"
+    action: name_frage
+
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Sure 😎|Sounds better 😊|yes)$"
+    action: en_datenschutz
+  - handler: CommandHandler
+    command: "yes"
+    action: en_datenschutz
+
+  - handler: TypeHandler
+    type: Update
+    action: en_name_tipp
 
 NAME_AENDERN:
   - handler: MessageHandler
@@ -37,17 +70,58 @@ NAME_AENDERN:
     type: Update
     action: name_aendern_tipp
 
-DATENSCHUTZ:
+EN_NAME_AENDERN:
   - handler: MessageHandler
-    filter: regex
-    regex: "^(Nein|Ja|Ja, klar 🌻|Lieber nicht ⚔️)$"
-    action: name_startpunkt
+    filter: text
+    action: en_name_aendern
+
+  - handler: TypeHandler
+    type: Update
+    action: en_name_aendern_tipp
+
+DATENSCHUTZ:
   - handler: CommandHandler
     command: Nein
-    action: name_startpunkt
+    action: datenschutz_ablehnen
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Nein|Lieber nicht ⚔️)$"
+    action: datenschutz_ablehnen
+
   - handler: CommandHandler
     command: Ja
-    action: name_startpunkt
+    action: startpunkt
+  - handler: CommandHandler
+    command: zustimmen
+    action: startpunkt
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Ja|Ja, klar 🌻|Ich stimme der Datenschutzerklärung zu 🌻)$"
+    action: startpunkt
+
+  - handler: TypeHandler
+    type: Update
+    action: datenschutz_tipp
+
+EN_DATENSCHUTZ:
+  - handler: CommandHandler
+    command: "no"
+    action: en_datenschutz_ablehnen
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(No|no|No way⚔️)$"
+    action: en_datenschutz_ablehnen
+
+  - handler: CommandHandler
+    command: "yes"
+    action: en_startpunkt
+  - handler: CommandHandler
+    command: "accept"
+    action: en_startpunkt
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(yes|Yes|Yes, sure 🌻|I accept the privacy policy 🌻)$"
+    action: en_startpunkt
 
   - handler: TypeHandler
     type: Update
@@ -57,13 +131,10 @@ STARTPUNKT:
   - handler: MessageHandler
     filter: regex
     regex: "^(schon da ⚓|Ja)$"
-    action: welche_route
+    action: frage_bahnhof_gif
   - handler: CommandHandler
     command: Ja
-    action: welche_route
-  - handler: CommandHandler
-    command: weiter
-    action: welche_route
+    action: frage_bahnhof_gif
 
   - handler: MessageHandler
     filter: regex
@@ -77,79 +148,23 @@ STARTPUNKT:
     type: Update
     action: startpunkt_tipp
 
-ROUTE_AUSWAEHLEN:
-  - handler: CommandHandler
-    command: reiherbergaufstieg
-    action: start_reiherberg_route
+EN_STARTPUNKT:
   - handler: MessageHandler
     filter: regex
-    regex: "^(Reiherbergaufstieg ⛰️|Reiherberg|Reiherbergaufstieg|Berg)$"
-    action: start_reiherberg_route
-
-  - handler: CommandHandler
-    command: seeroute
-    action: start_see_route
-  - handler: MessageHandler
-    filter: regex
-    regex: "^(Seeroute 🌊|Seeroute|Zernsee|See)$"
-    action: start_see_route
-
-  - handler: CommandHandler
-    command: reiherbergaufstieg_en
-    action: en_start_reiherberg_route
-  - handler: MessageHandler
-    filter: regex
-    regex: "^(Heron Hill Climb 🇬🇧|English|Heron Hill|Hill)$"
-    action: en_start_reiherberg_route
-
-  - handler: TypeHandler
-    type: Update
-    action: welche_route_tipp
-
-REIHERBERGROUTE_BESTAETIGEN:
-  - handler: CommandHandler
-    command: weiter
-    action: frage_bahnhof_gif
-  - handler: CommandHandler
-    command: Ja
-    action: frage_bahnhof_gif
-  - handler: MessageHandler
-    filter: regex
-    regex: "^(Ja, ich bin bereit 🏁|Ja)$"
-    action: frage_bahnhof_gif
-
-  - handler: CommandHandler
-    command: Nein
-    action: welche_route
-  - handler: MessageHandler
-    filter: regex
-    regex: "^(Ich würde doch lieber eine andere Route gehen 🤔|Nein)$"
-    action: welche_route
-
-  - handler: TypeHandler
-    type: Update
-    action: start_reiherberg_route_tipp
-
-EN_REIHERBERGROUTE_BESTAETIGEN:
-  - handler: CommandHandler
-    command: weiter
+    regex: "^(I'm there ⚓|Yes|yes)$"
     action: en_frage_bahnhof_gif
   - handler: CommandHandler
     command: "yes"
     action: en_frage_bahnhof_gif
+
   - handler: MessageHandler
     filter: regex
-    regex: "^(Yes, I am ready 🏁|Ja|yes|Yes)$"
-    action: en_frage_bahnhof_gif
-
+    regex: "^(On my way 😱|No|no)$"
+    action: en_weg_zum_bahnhof
   - handler: CommandHandler
     command: "no"
-    action: welche_route
-  - handler: MessageHandler
-    filter: regex
-    regex: "^(I would rather choose another route 🤔|Nein|no|No)$"
-    action: welche_route
+    action: en_weg_zum_bahnhof
 
   - handler: TypeHandler
     type: Update
-    action: en_start_reiherberg_route_tipp
+    action: en_startpunkt_tipp
