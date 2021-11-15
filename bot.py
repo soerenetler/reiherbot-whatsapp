@@ -24,7 +24,7 @@ def constant_factory(value):
     return lambda: value
 
 
-user_states = defaultdict(constant_factory("START"))
+user_states = defaultdict(constant_factory("START_START"))
 user_context = defaultdict(dict)
 
 general_actions = read_action_yaml("actions/general.yml", action_functions={
