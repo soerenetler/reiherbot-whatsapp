@@ -367,8 +367,8 @@ en_foto_reiherberg:
   - type: message
     parse_mode: MarkdownV2
     text: >
-      "Take a pic and send it to me\. 📸"
-      "You can find the photos on our [website](reiherbot.de)\. afterwards\."
+      "Take a pic and send it to me. 📸"
+      "You can find the photos on our [website](reiherbot.de). afterwards."
     InlineKeyboard:
       - text: "🧀 Cheese"
         data: "action:en_foto_reiherberg_anweisung"
@@ -462,8 +462,8 @@ en_kirche_frage:
   - type: message
     parse_mode: MarkdownV2
     text: >
-      Since the church was the present of the German Emperor Friedrich to the village\,
-      it bears his name\: *Kaiser\-Friedrich\-Kirche*\.
+      Since the church was the present of the German Emperor Friedrich to the village,
+      it bears his name: *Kaiser-Friedrich-Kirche*.
   - type: poll
     question: The church was awarded with a distinction by the Nature and Biodiversity Conservation Union (NABU). Can you imagine why?
     options:

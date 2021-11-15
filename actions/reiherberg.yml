@@ -64,7 +64,7 @@ frage_bahnhof_aufloesung:
   - type: message
     parse_mode: MarkdownV2
     text: |
-      *Richtung Potsdam Hbf\.*
+      *Richtung Potsdam Hbf.*
       🕛 zur vollen Stunde von Gleis 2 
       🕡 zur halben Stunde von Gleis 1
   - type: message
@@ -370,8 +370,8 @@ foto_reiherberg:
   - type: message
     parse_mode: MarkdownV2
     text: >
-      Knipse ein Foto und schicke es mir zu\. 📸
-      Die schönsten Aufnahmen findest du auf unserer [Website](https://reiherbot.de) \.
+      Knipse ein Foto und schicke es mir zu. 📸
+      Die schönsten Aufnahmen findest du auf unserer [Website](https://reiherbot.de) .
     InlineKeyboard:
       - text: "🧀 Cheese"
         data: "action:foto_reiherberg_anweisung"
@@ -468,8 +468,8 @@ kirche_frage:
   - type: message
     parse_mode: MarkdownV2
     text: >
-      Weil diese Kirche ein Geschenk des Kaisers Friedrich ans Dorf war\,
-      trägt sie seinen Namen\: *Kaiser\-Friedrich\-Kirche*\.
+      Weil diese Kirche ein Geschenk des Kaisers Friedrich ans Dorf war,
+      trägt sie seinen Namen: *Kaiser-Friedrich-Kirche*.
   - type: message
     text: Nach ihrer Sanierung 2007 wurde die Kirche vom Naturschutzbund (NABU) ausgezeichnet.
   - type: poll
@@ -701,7 +701,7 @@ info_feuerwehr:
     performer: "Reiherbot"
   - type: message
     parse_mode: MarkdownV2
-    text: Mehr zur Freiwillige Feuerwehr findest du [hier](https://feuerwehr-golm.jimdofree.com/)\.
+    text: Mehr zur Freiwillige Feuerwehr findest du [hier](https://feuerwehr-golm.jimdofree.com/).
     InlineKeyboard:
       - text: "🐾 Weiter"
         data: "action:rueckweg_bahnhof_1"
