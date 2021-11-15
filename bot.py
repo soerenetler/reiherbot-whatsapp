@@ -8,7 +8,7 @@ from twilio.rest import Client
 
 from collections import defaultdict
 
-from actions import reiherbergActions, en_reiherbergActions, writeActions
+from actions import reiherbergActions, en_reiherbergActions, writeActions, generalActions
 
 
 # Find your Account SID and Auth Token at twilio.com/console
@@ -25,8 +25,10 @@ def constant_factory(value):
 
 
 user_states = defaultdict(constant_factory("START"))
+user_context = defaultdict(dict)
+
 general_actions = read_action_yaml("actions/general.yml", action_functions={
-                                         **reiherbergActions.action_functions, **writeActions.action_functions})
+                                         **generalActions.action_functions, **reiherbergActions.action_functions, **writeActions.action_functions})
 reiherberg_actions = read_action_yaml("actions/reiherberg.yml", action_functions={
                                          **reiherbergActions.action_functions, **writeActions.action_functions})
 en_reiherberg_actions = read_action_yaml("actions/en_reiherberg.yml", action_functions={
@@ -50,13 +52,16 @@ def bot():
     print(request.values)
     update = WhatsAppUpdate(**request.values)
     icoming_state = user_states[update.From]
+    context = user_context[update.From]
+
+    print("Current context: {}".format(context))
     print("Current state: {}".format(icoming_state))
 
     for handler in states_handler[icoming_state]:
         print("Filter Eval: {}".format(handler))
         if handler.check_update(update):
             print("Filter True: {}".format(handler))
-            new_state = handler.callback(client, update)
+            new_state = handler.callback(client, update, context)
             if new_state:
                 user_states[update.From] = new_state
             break

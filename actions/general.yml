@@ -234,10 +234,6 @@ en_weg_zum_bahnhof:
       - text: "🐾 continue"
         data: 'action:en_frage_bahnhof_gif'
 
-log_update:
-  - type: function
-    func: log_update
-
 cancel:
   - type: message
     text: 'Bye! I hope we can talk again some day.'
