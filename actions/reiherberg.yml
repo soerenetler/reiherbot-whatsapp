@@ -21,6 +21,8 @@ frage_bahnhof_gif_aufloesung:
     func: send_bahnhof_gif
   - type: message
     text: "So viel hat sich gar nicht geändert, oder?"
+  - type: message
+    text: "🍂 Wir starten hier unseren Rundgang. Mit *weiter* kommst du immer zum nächsten Schritt."
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:frage_bahnhof"
@@ -68,7 +70,7 @@ frage_bahnhof_aufloesung:
       🕛 zur vollen Stunde von Gleis 2 
       🕡 zur halben Stunde von Gleis 1
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: message
@@ -219,7 +221,7 @@ frage_weinmeisterstrasse_aufloesung:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer Wein.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer_Wein.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
   - type: message
@@ -267,7 +269,7 @@ fehlerbild_reiherberg_aufloesung:
       Früher gab es hier einen kleinen Laden.
       Heute befindet sich dort der art supermarkt - eine Gallerie.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art_Supermarkt.mp3
     title: "Supermarkt Golm"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -288,7 +290,7 @@ aufstieg_reiherberg:
     text: >
       Auf dem Weg kannst du in Ruhe die Natur genießen oder die Sage über die Entstehung des Reiherbergs anhören.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie_der_Reiherberg_entstanden_ist.mp3
     title: "Reiherberg Sage"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -326,7 +328,7 @@ schaetzfrage_reiherberg_aufloesung:
       Höher ist nur Ehrenpfortenberg. 
       Doch dafür ist die Aussicht von hier unvergleichlich und lädt zum Fotografieren ein. 🌄
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der_Reiherberg.mp3
     title: "Reiherberg"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -391,7 +393,7 @@ weg_kirche_1:
     text: >
       Unser Weg führt uns nun den Berg hinab.
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Hier entlang!.jpg
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Hier_entlang!.jpg
   - type: message
     text: >
       Wenn du die Aussichtsplattform verlässt, folge dem Weg ganz links.
@@ -519,7 +521,7 @@ frage_storchenbank_aufloesung:
       Das ist das älteste Gebäude in ganz Potsdam.
       Hier finden regelmäßig Veranstaltungen statt, über die du vom [Kulturverein](https://www.kultur-in-golm.de/) mehr erfahren kannst.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die alte Kapelle.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die_alte_Kapelle.mp3
     title: "Kapelle"
     performer: "Reiherbot"
   - type: message
@@ -573,7 +575,7 @@ schule:
       Dieses Gebäude war früher einmal die Schule.
       Links daneben war der Schulhof.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg 1903.PNG"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg_1903.PNG"
   - type: message
     text: Hier sind Golmer:innen und Besucher aus der Region auf Kartoffelsäcken auch im Sommer den Berg hinunter gerutscht.
   - type: audio

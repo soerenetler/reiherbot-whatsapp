@@ -64,7 +64,7 @@ en_frage_bahnhof_aufloesung:
       🕛 from platform 2 on the hour 
       🕡 from platform 1 on the half hour
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: message
@@ -215,7 +215,7 @@ en_frage_weinmeisterstrasse_aufloesung:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer Wein.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer_Wein.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
   - type: message
@@ -259,7 +259,7 @@ en_fehlerbild_reiherberg_aufloesung:
   - type: message
     text: There used to be a small store here. Today, a small gallery - the art supermarket - is located here.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art_Supermarkt.mp3
     title: "Supermarkt Golm"
     performer: "Reiherbot"
   - type: message
@@ -283,7 +283,7 @@ en_aufstieg_reiherberg:
       If that's too quiet for you, you can also listen to the legend of Reiherberg on the way.
       Let me know when you reach the viewing platform.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie_der_Reiherberg_entstanden_ist.mp3
     title: "Reiherberg Sage"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -317,7 +317,7 @@ en_schaetzfrage_reiherberg_aufloesung:
       Only the 71-metre-high Ehrenpfortenberg is higher. 
       But the view from Reiherberg is incomparable and invites you to take photos. 🌄
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der_Reiherberg.mp3
     title: "Reiherberg"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -378,7 +378,7 @@ en_weg_kirche_1:
     text: >
       Our path now leads us down the mountain.
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Hier entlang!.jpg
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Hier_entlang!.jpg
   - type: message
     text: When you leave the viewing platform, follow the path on the far left.
       Go downhill until you reach a junction to the right.
@@ -502,7 +502,7 @@ en_frage_storchenbank_aufloesung:
       But now it's time to head back, isn't it?
       Don't worry, there are still a few things left to discover. 😉
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die alte Kapelle.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die_alte_Kapelle.mp3
     title: "Kapelle"
     performer: "Reiherbot"
   - type: message
@@ -535,7 +535,7 @@ en_schule:
       This building was once the school in Golm.
       To the left of the building, the former schoolyard, was the Golm slide.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg 1903.PNG"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg_1903.PNG"
   - type: message
     text: >
       Among other things, the local council is meeting here today.
