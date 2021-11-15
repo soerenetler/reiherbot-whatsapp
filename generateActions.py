@@ -30,7 +30,7 @@ class Action():
             if item["type"] == "message":
                 client.messages.create(
                     body=item["text"].format(
-                        **{"name": update.ProfileName, "echo": update.Body}),
+                        **{"profileName": update.ProfileName, "echo": update.Body, **context}),
                     from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
@@ -55,10 +55,10 @@ class Action():
                     to=update.From
                 )
             elif item["type"] == "poll":
-                message = "*" + item["question"] + "*%0a"
+                message = "*" + item["question"] + "*/n"
                 numbers = ["1️⃣ ","2️⃣ ","3️⃣ ","4️⃣ ","5️⃣ ","6️⃣ "]
                 for number, option in zip(numbers, item["options"]):
-                    message += number + option + "%0a"
+                    message += number + option + "/n"
                 client.messages.create(
                     body=message,
                     from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
