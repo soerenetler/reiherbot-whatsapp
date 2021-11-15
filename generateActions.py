@@ -25,7 +25,7 @@ class Action():
         self.actions = actions
         self.action_functions = action_functions
 
-    def __call__(self, client, update: WhatsAppUpdate):
+    def __call__(self, client, update: WhatsAppUpdate, context):
         for item in self.actions:
             if item["type"] == "message":
                 client.messages.create(
@@ -66,7 +66,7 @@ class Action():
                 )
             elif item["type"] == "function":
                 arguments = {i:item[i] for i in item if i!='type' and i!='func'}
-                self.action_functions[item["func"]](client, update, **arguments)
+                self.action_functions[item["func"]](client, update, context, **arguments)
 
             elif item["type"] == "return":
                 return item["state"]

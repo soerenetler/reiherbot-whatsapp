@@ -19,7 +19,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 config.read("config.ini")
 
-def send_bahnhof_gif(client, update: WhatsAppUpdate):
+def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
     #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
 
     im_file = BytesIO(im_bytes)  # convert image to file-like object
@@ -31,7 +31,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate):
     # TODO send gif
     #update.message.reply_document(gif)
 
-def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate):
+def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
     schaetzung = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 106
     if schaetzung == echter_wert:
@@ -53,7 +53,7 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate):
             to=update.From
         )
 
-def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate):
+def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate, context):
     schaetzung = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 68
     if schaetzung == echter_wert:
@@ -75,7 +75,7 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate):
             to=update.From
         )
 
-def eval_kirche_wortraetsel(client, update: WhatsAppUpdate):
+def eval_kirche_wortraetsel(client, update: WhatsAppUpdate, context):
     antwort = update.Body
     echter_wert = "Kaiser-Friedrich-Kirche"
 
@@ -92,7 +92,7 @@ def eval_kirche_wortraetsel(client, update: WhatsAppUpdate):
             to=update.From
         )
 
-def eval_storchenbank(client, update: WhatsAppUpdate):
+def eval_storchenbank(client, update: WhatsAppUpdate, context):
     antwort = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 2012
     if antwort.lower() == echter_wert:
@@ -110,7 +110,7 @@ def eval_storchenbank(client, update: WhatsAppUpdate):
             to=update.From
         )
 
-def reiherberg_medaille(client, update: WhatsAppUpdate):
+def reiherberg_medaille(client, update: WhatsAppUpdate, context):
     #try:
     #    photo_files = update.from_user.get_profile_photos().photos[0][-1].get_file().download_as_bytearray()
     #    # convert image to file-like object
@@ -129,7 +129,7 @@ def reiherberg_medaille(client, update: WhatsAppUpdate):
     to=update.From
 )
 
-def eval_quiz(client, update: WhatsAppUpdate, correct_option_id:int, correct_answer_text:str, wrong_answer_text:str, correct_answer_sticker=None):
+def eval_quiz(client, update: WhatsAppUpdate, context, correct_option_id:int, correct_answer_text:str, wrong_answer_text:str, correct_answer_sticker=None):
     if update.Body == [correct_option_id]:
         # if correct_answer_sticker:
         #    update.poll_answer.user.send_sticker(correct_answer_sticker)
