@@ -27,7 +27,7 @@ class User(mongoengine.Document):
     meta = {'db_alias': user_dbname}
 
 def entry_conversation(client, update: WhatsAppUpdate, context):
-    db_user = User(user_id=update.WaId, name=update.ProfileName, From=update.From)
+    db_user = User(user_id=update.WaId, name=update.ProfileName, username=update.From)
     db_user.save()
     context["user_id"] = db_user
     
