@@ -73,13 +73,6 @@ frage_bahnhof_aufloesung:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.ogg"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
-  - type: message
-    text: Wenn du mehr Infos zum Bahnhof Golm haben möchtest, tippe auf "mehr Infos".
-    InlineKeyboard:
-      - text: "💡 mehr Infos"
-        data: "action:info_bahnhof"
-      - text: "🐾 weiter"
-        data: "action:weg01"
   - type: return
     state: BAHNHOF_FRAGE_AUFLOESUNG
 
