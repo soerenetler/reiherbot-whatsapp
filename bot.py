@@ -56,6 +56,7 @@ def bot():
 
     print("Current context: {}".format(context))
     print("Current state: {}".format(icoming_state))
+    print("Update: {}".format(str(request.values)))
 
     for handler in states_handler[icoming_state]:
         print("Filter Eval: {}".format(handler))
