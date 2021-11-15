@@ -61,11 +61,11 @@ def write_voice(client, update: WhatsAppUpdate, context, bucket, folder):
 
 def write(client, update: WhatsAppUpdate, context, bucket, folder):
     if update.MediaContentType0 and update.MediaContentType0.startswith("audio"):
-        write_voice(client, update, bucket, folder)
+        write_voice(client, update, context, bucket, folder)
     elif update.MediaContentType0 and update.MediaContentType0.startswith("image"):
-        write_photo(client, update, bucket, folder)
+        write_photo(client, update, context, bucket, folder)
     elif update.Body!= "":
-        write_message(client, update, bucket, folder)
+        write_message(client, update, context, bucket, folder)
     else:
         raise NotImplementedError("This type of update can not be saved")
 
