@@ -18,7 +18,7 @@ s3_client = session.client('s3',
                         aws_secret_access_key=os.getenv('SPACES_SECRET'))
 
 
-def write_photo(client, update: WhatsAppUpdate, bucket, folder):
+def write_photo(client, update: WhatsAppUpdate, context, bucket, folder):
     user_id = update.WaId
     name = update.ProfileName
     update.MediaUrl0
@@ -32,7 +32,7 @@ def write_photo(client, update: WhatsAppUpdate, bucket, folder):
                       #}
                       )
 
-def write_message(client, update: WhatsAppUpdate, bucket, folder):
+def write_message(client, update: WhatsAppUpdate, context, bucket, folder):
     user_id = update.WaId
     name = update.ProfileName
     message = update.Body
@@ -46,7 +46,7 @@ def write_message(client, update: WhatsAppUpdate, bucket, folder):
                       #}
                       )
 
-def write_voice(client, update: WhatsAppUpdate, bucket, folder):
+def write_voice(client, update: WhatsAppUpdate, context, bucket, folder):
     user_id = update.WaId
     name = update.ProfileName
 
@@ -59,7 +59,7 @@ def write_voice(client, update: WhatsAppUpdate, bucket, folder):
                     #}
                     )
 
-def write(client, update: WhatsAppUpdate, bucket, folder):
+def write(client, update: WhatsAppUpdate, context, bucket, folder):
     if update.MediaContentType0 and update.MediaContentType0.startswith("audio"):
         write_voice(client, update, bucket, folder)
     elif update.MediaContentType0 and update.MediaContentType0.startswith("image"):

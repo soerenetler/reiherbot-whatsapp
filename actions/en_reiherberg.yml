@@ -15,7 +15,7 @@ en_frage_bahnhof_gif_tipp:
 en_frage_bahnhof_gif_aufloesung:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: en_bahnhof_gif
   - type: function
     func: send_bahnhof_gif
@@ -353,7 +353,7 @@ en_foto_reiherberg_anweisung:
 en_foto_reiherberg_aufloesung:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: en_reiherberg
   - type: media_group
     urls:
@@ -757,7 +757,7 @@ en_end:
 en_ende_feedback:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: en_feedback
   - type: message
     text: Thanks for your feedback! With *start* you can go back and take a new tour.

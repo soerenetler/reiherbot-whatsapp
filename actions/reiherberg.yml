@@ -15,7 +15,7 @@ frage_bahnhof_gif_tipp:
 frage_bahnhof_gif_aufloesung:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: bahnhof_gif
   - type: function
     func: send_bahnhof_gif
@@ -42,7 +42,7 @@ frage_bahnhof_tipp:
 frage_bahnhof_aufloesung:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: frage_bahnhof
   - type: function
     func: eval_schaetzfrage_bahnhof
@@ -364,7 +364,7 @@ foto_reiherberg_anweisung:
 foto_reiherberg_aufloesung:
   - type: function
     func: write
-    bucket: reiherbot
+    bucket: reiherbot-whatsapp
     folder: reiherberg
   - type: message
     text: "Tolle Aussicht, oder? "

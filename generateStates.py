@@ -3,7 +3,7 @@ import yaml
 from WhatsAppUpdate import WhatsAppUpdate
 import re
 
-from pattern import EMOJI_PATTERN, WEITER_PATTERN, WOHIN_PATTERN, JA_PATTERN, NEIN_PATTERN
+from digitalguide.pattern import EMOJI_PATTERN, WEITER_PATTERN, WOHIN_PATTERN, JA_PATTERN, NEIN_PATTERN
 
 def read_state_yml(filename, actions={}, prechecks:List=[]):
     with open(filename) as file:
