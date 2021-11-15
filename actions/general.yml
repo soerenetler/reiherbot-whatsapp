@@ -63,14 +63,14 @@ en_name_frage:
   
 name_tipp:
   - type: message
-    text: 'Das habe ich nicht verstanden 😖 Du kannst mit /Ja oder /Nein antworten.'
+    text: 'Das habe ich nicht verstanden 😖 Du kannst mit *Ja* oder *Nein* antworten.'
     ReplyKeyboardMarkup:
         - text: "Ja, gerne! 😎"
         - text: "Nein, nenn mich lieber anders! 👻"
 
 en_name_tipp:
   - type: message
-    text: 'I did not understand you! 😖 Just type /yes  or /no .'
+    text: 'I did not understand you! 😖 Just type *yes*  or *no*.'
     ReplyKeyboardMarkup:
         - text: "Sure 😎"
         - text: "No, better another way! 👻"
@@ -112,7 +112,7 @@ datenschutz:
     text: Um unsere Stadteilführung weiter zu verbessern würden wir gerne ein paar Daten von dir sammeln.
   - type: message
     parse_mode: MarkdownV2
-    text: Ist das ok für dich? Mehr Infos [hier](www.reiherbot.de/datenschutz)
+    text: Ist das ok für dich? Mehr Infos unter www.reiherbot.de/datenschutz
     disable_web_page_preview: True
     ReplyKeyboardMarkup:
         - text: "Ja, klar 🌻"
@@ -127,7 +127,7 @@ en_datenschutz:
     text: To improve the guide we would like to collect some user data.
   - type: message
     parse_mode: MarkdownV2
-    text: Are you ok with that? More information [here](www.reiherbot.de/datenschutz)
+    text: Are you ok with that? More information here www.reiherbot.de/datenschutz
     disable_web_page_preview: False
     ReplyKeyboardMarkup:
         - text: "Yes, sure 🌻"
@@ -137,14 +137,14 @@ en_datenschutz:
 
 datenschutz_tipp:
   - type: message
-    text: 'Das habe ich nicht verstanden :/ Du kannst mit /Ja oder /Nein antworten.'
+    text: 'Das habe ich nicht verstanden :/ Du kannst mit *Ja* oder *Nein* antworten.'
     ReplyKeyboardMarkup:
         - text: "Ja, klar 🌻"
         - text: "Lieber nicht ⚔️"
 
 en_datenschutz_tipp:
   - type: message
-    text: 'I did not understand you! 😖 Just type /yes  or /no .'
+    text: 'I did not understand you! 😖 Just type *yes*  or *no*.'
     ReplyKeyboardMarkup:
         - text: "Yes, sure 🌻"
         - text: "No way⚔️"
@@ -153,7 +153,7 @@ datenschutz_ablehnen:
   - type: message
     text: >
           Leider ist der Rundgang ohne deine Einweillung zur Datenschutzerklärung nicht möglich.
-          Du kannst dich jederzeit mit /zustimmen umentscheiden - wir passen auch gut auf deine Daten auf.
+          Du kannst dich jederzeit mit *zustimmen* umentscheiden - wir passen auch gut auf deine Daten auf.
     ReplyKeyboardMarkup:
         - text: Ich stimme der Datenschutzerklärung zu 🌻
 
@@ -161,7 +161,7 @@ en_datenschutz_ablehnen:
   - type: message
     text: >
           Unfortunately, the tour is not possible without your consent to the privacy policy.
-          You can change your mind at any time and type /accept - we also take good care of your data.
+          You can change your mind at any time and type *accept* - we also take good care of your data.
     ReplyKeyboardMarkup:
         - text: I agree to the privacy policy 🌻
 
@@ -197,11 +197,11 @@ en_startpunkt:
 
 startpunkt_tipp:
   - type: message
-    text: 'Das habe ich nicht verstanden :/ Du kannst mit /Ja oder /Nein antworten.'
+    text: 'Das habe ich nicht verstanden :/ Du kannst mit *Ja* oder *Nein* antworten.'
 
 en_startpunkt_tipp:
   - type: message
-    text: 'I did not understand you! 😖 Just type /yes  or /no .'
+    text: 'I did not understand you! 😖 Just type *yes*  or *no*.'
     ReplyKeyboardMarkup:
         - text: "I'm there ⚓"
         - text: "On my way 😱"

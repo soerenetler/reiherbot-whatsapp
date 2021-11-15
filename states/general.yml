@@ -138,6 +138,14 @@ STARTPUNKT:
 
   - handler: MessageHandler
     filter: regex
+    regex: "^(Weiter|weiter)$"
+    action: frage_bahnhof_gif
+  - handler: CommandHandler
+    command: Weiter
+    action: frage_bahnhof_gif
+
+  - handler: MessageHandler
+    filter: regex
     regex: "^(noch auf dem Weg 😱|Nein)$"
     action: weg_zum_bahnhof
   - handler: CommandHandler

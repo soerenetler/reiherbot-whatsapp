@@ -738,7 +738,7 @@ en_ende_bahnhof:
     text: Feel free to tell us what you think about the tour.
     InlineKeyboard:
       - text: "💛 Feedback Time"
-        data: "action:en_feedback_geben"
+        data: "action:en_feedback_tipp"
       - text: "↪️ skip"
         data: "action:en_ende_feedback"
   - type: return
@@ -748,13 +748,9 @@ en_feedback_tipp:
   - type: message
     text: Just write your feedback in the chat or send us a voice message.
 
-en_feedback_geben:
-  - type: message
-    text: Just write your feedback in the chat or send us a voice message.
-
 en_end:
   - type: message
-    text: With /start you can go back and take a new tour.
+    text: With *start* you can go back and take a new tour.
   - type: return
     state: EN_END
 
@@ -764,16 +760,16 @@ en_ende_feedback:
     bucket: reiherbot
     folder: en_feedback
   - type: message
-    text: Thanks for your feedback! With /start you can go back and take a new tour.
+    text: Thanks for your feedback! With *start* you can go back and take a new tour.
   - type: return
     state: EN_END
 
 en_timeout:
   - type: message
-    text: You have not been active for a while. With /start you can start a new tour with the Reiherbot.
+    text: You have not been active for a while. With *start* you can start a new tour with the Reiherbot.
   - type: return
     state: EN_END
 
 en_weiter_tipp:
   - type: message
-    text: "Sorry, I could not understand you. To continue enter /continue or click the continue button."
+    text: "Sorry, I could not understand you. To continue enter *continue* or click the continue button."
