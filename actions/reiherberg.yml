@@ -108,7 +108,7 @@ frage_quiz:
       - "Kaiser Friedrichs IV. züchtete in Golm Reiher für den Schlosspark Sanssouci."
       - "In den Mooren rund um Golm lebten viele Reiher."
       - "Reiher stehen mythologisch für gute Ernten."
-    correct_option_id: 1
+    correct_option_id: "(2|Moor)"
   - type: return
     state: FRAGE_QUIZ
 
@@ -119,7 +119,7 @@ frage_quiz_tipp:
 frage_quiz_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 1
+    correct_option_id: "(2|Moor)"
     correct_answer_text: "Richtig, {name} 🎉"
     wrong_answer_text: "Nicht ganz!"
   - type: sticker
@@ -167,7 +167,7 @@ frage_ubahn_tipp:
 frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 0
+    correct_option_id: "(Kurfürstendamm|kurfürstendamm|Kurfuerstendamm|kurfuerstendamm)"
     correct_answer_text: "Richtig, {name} 🎉 es war der Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Hast du das Schild übersehen? Die richtige Antwort war Kurfürstendamm!"
@@ -259,7 +259,7 @@ fehlerbild_reiherberg_tipp:
 fehlerbild_reiherberg_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 3
+    correct_option_id: (Supermarktschild|Schild|4)
     correct_answer_text: Stimmt {name}! Im Dorfkern gibt es keinen Supermarkt mehr. 🛍️'
     wrong_answer_text: "Das war nicht der Fehler!"
   - type: message
@@ -462,7 +462,7 @@ kirche_frage_tipp:
 kirche_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 0
+    correct_option_id: (1|🦉|Schleiereulen)
     correct_answer_text: "Stimmt {name}!"
     wrong_answer_text: "Das war es nicht!"
   - type: message
@@ -636,7 +636,7 @@ frage_feuerwehr_tipp:
 frage_feuerwehr_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 1
+    correct_option_id: (2|Schläuche|Trocknen)
     correct_answer_text: "Stimmt {name}!"
     wrong_answer_text: "Nicht ganz!"
   - type: message

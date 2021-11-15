@@ -14,7 +14,9 @@ def read_state_yml(filename, actions={}, prechecks:List=[]):
     for state, handlers in yaml_dict.items():
         handler_list = prechecks[:]
         for handler in handlers:
-            if handler["handler"] == "MessageHandler":
+            if handler["handler"] == "PollAnswerHandler":
+                newHandler = MessageHandler(RegexFilter("^(.)+"), actions[handler["action"]])
+            elif handler["handler"] == "MessageHandler":
                 if handler["filter"] == "regex":
                     if handler["regex"] == "EMOJI_PATTERN":
                         newHandler = MessageHandler(RegexFilter(

@@ -113,7 +113,7 @@ en_frage_quiz_tipp:
 en_frage_quiz_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 1
+    correct_option_id: "(2|moor)"
     correct_answer_text: "Correct, {name} 🎉"
     wrong_answer_text: "Not quite!"
   - type: sticker
@@ -162,7 +162,7 @@ en_frage_ubahn_tipp:
 en_frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 0
+    correct_option_id: "(Kurfürstendamm|Kurfuerstendamm)"
     correct_answer_text: "Correct, {name} 🎉 it was the Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Did you miss the sign? The correct answer was Kurfürstendamm!"
@@ -253,7 +253,7 @@ en_fehlerbild_reiherberg_tipp:
 en_fehlerbild_reiherberg_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 3
+    correct_option_id: (4|supermarket|sign|Sign|Supermarket|🛒)
     correct_answer_text: "Correct {name}! There is no longer a supermarket in the village center. 🛍️"
     wrong_answer_text: "That was not the mistake!"
   - type: message
@@ -446,7 +446,7 @@ en_kirche_frage_tipp:
 en_kirche_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 0
+    correct_option_id: "(1|Jackdaws|nest|Nest)"
     correct_answer_text: "You are right, {name}!"
     wrong_answer_text: "Ups!"
   - type: message
@@ -598,7 +598,7 @@ en_frage_feuerwehr_tipp:
 en_frage_feuerwehr_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: 1
+    correct_option_id: "(2|hoses|dry|Hoses|Dry)"
     correct_answer_text: "You are right, {name}!"
     wrong_answer_text: "Ups!"
   - type: message
