@@ -11,6 +11,10 @@ EN_BAHNHOF_FRAGE_GIF_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_frage_bahnhof
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_frage_bahnhof
 
   - handler: TypeHandler
     type: Update
@@ -19,6 +23,10 @@ EN_BAHNHOF_FRAGE_GIF_AUFLOESUNG:
 EN_BAHNHOF_FRAGE:
   - handler: CommandHandler
     command: weiter
+    action: en_frage_bahnhof_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_bahnhof_aufloesung
 
   - handler: MessageHandler
@@ -34,6 +42,10 @@ EN_BAHNHOF_FRAGE_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_weg01
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg01
 
   - handler: TypeHandler
     type: Update
@@ -42,6 +54,10 @@ EN_BAHNHOF_FRAGE_AUFLOESUNG:
 EN_WEG01:
   - handler: CommandHandler
     command: weiter
+    action: en_frage_quiz
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_quiz
 
   - handler: TypeHandler
@@ -60,6 +76,10 @@ EN_FRAGE_QUIZ_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_weg_01a
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_01a
 
   - handler: TypeHandler
     type: Update
@@ -69,6 +89,10 @@ EN_WEG01A:
   - handler: CommandHandler
     command: weiter
     action: en_frage_ubahn
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_frage_ubahn
 
   - handler: TypeHandler
     type: Update
@@ -76,6 +100,10 @@ EN_WEG01A:
 
 EN_FRAGE_UBAHN:
   - handler: PollAnswerHandler
+    action: en_frage_ubahn_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_ubahn_aufloesung
 
   - handler: TypeHandler
@@ -86,6 +114,10 @@ EN_FRAGE_UBAHN_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_weg02
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg02
 
   - handler: TypeHandler
     type: Update
@@ -94,6 +126,10 @@ EN_FRAGE_UBAHN_AUFLOESUNG:
 EN_WEG02:
   - handler: CommandHandler
     command: weiter
+    action: en_frage_weinmeisterstrasse
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_weinmeisterstrasse
 
   - handler: TypeHandler
@@ -112,6 +148,10 @@ EN_FRAGE_WEINMEISTERATRASSE_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_fehlerbild_reiherberg_bank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_fehlerbild_reiherberg_bank
 
   - handler: TypeHandler
     type: Update
@@ -129,6 +169,10 @@ EN_FEHLERBILD_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_aufstieg_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_aufstieg_reiherberg
 
   - handler: TypeHandler
     type: Update
@@ -137,6 +181,10 @@ EN_FEHLERBILD_REIHERBERG_AUFLOESUNG:
 EN_AUFSTIEG_REIHERBERG:
   - handler: CommandHandler
     command: weiter
+    action: en_schaetzfrage_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_schaetzfrage_reiherberg
 
   - handler: TypeHandler
@@ -157,6 +205,10 @@ EN_SCHAETZFRAGE_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_foto_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_foto_reiherberg
 
   - handler: TypeHandler
     type: Update
@@ -165,6 +217,10 @@ EN_SCHAETZFRAGE_REIHERBERG_AUFLOESUNG:
 EN_FOTO_REIHERBERG:
   - handler: CommandHandler
     command: weiter
+    action: en_foto_reiherberg_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_foto_reiherberg_aufloesung
   - handler: MessageHandler
     filter: photo
@@ -178,6 +234,10 @@ EN_FOTO_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: en_weg_kirche_1
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_kirche_1
 
   - handler: TypeHandler
     type: Update
@@ -187,6 +247,10 @@ EN_WEG_KIRCHE_1:
   - handler: CommandHandler
     command: weiter
     action: en_weg_kirche_2
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_kirche_2
 
   - handler: TypeHandler
     type: Update
@@ -195,6 +259,10 @@ EN_WEG_KIRCHE_1:
 EN_WEG_KIRCHE_2:
   - handler: CommandHandler
     command: weiter
+    action: en_kirche_wortraetsel
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_kirche_wortraetsel
 
   - handler: TypeHandler
@@ -223,6 +291,10 @@ EN_KIRCHE_AUFLOESEUNG:
   - handler: CommandHandler
     command: weiter
     action: en_weg_storchenbank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_storchenbank
 
   - handler: TypeHandler
     type: Update
@@ -231,6 +303,10 @@ EN_KIRCHE_AUFLOESEUNG:
 EN_WEG_STORCHENBANK:
   - handler: CommandHandler
     command: weiter
+    action: en_frage_storchenbank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_storchenbank
 
   - handler: TypeHandler
@@ -251,6 +327,10 @@ EN_KAPELLE:
   - handler: CommandHandler
     command: weiter
     action: en_weg_schule
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_schule
 
   - handler: TypeHandler
     type: Update
@@ -259,6 +339,10 @@ EN_KAPELLE:
 EN_WEG_SCHULE:
   - handler: CommandHandler
     command: weiter
+    action: en_schule
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_schule
 
   - handler: TypeHandler
@@ -269,6 +353,10 @@ EN_SCHULE:
   - handler: CommandHandler
     command: weiter
     action: en_weg_landhotel
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_landhotel
 
   - handler: TypeHandler
     type: Update
@@ -278,6 +366,10 @@ EN_WEG_LANDHOTEL:
   - handler: CommandHandler
     command: weiter
     action: en_weg_feuerwehr
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_weg_feuerwehr
 
   - handler: TypeHandler
     type: Update
@@ -286,6 +378,10 @@ EN_WEG_LANDHOTEL:
 EN_FEUERWEHR:
   - handler: CommandHandler
     command: weiter
+    action: en_frage_feuerwehr
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_frage_feuerwehr
 
   - handler: TypeHandler
@@ -303,7 +399,11 @@ EN_FRAGE_FEUERWEHR:
 EN_FRAGE_FEUERWEHR_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
-    action: en_rueckweg_bahnhof_2
+    action: en_rueckweg_bahnhof_1
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_rueckweg_bahnhof_1
 
   - handler: TypeHandler
     type: Update
@@ -312,6 +412,10 @@ EN_FRAGE_FEUERWEHR_AUFLOESUNG:
 EN_RUECKWEG_BAHNHOF_1:
   - handler: CommandHandler
     command: weiter
+    action: en_rueckweg_bahnhof_2
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_rueckweg_bahnhof_2
 
   - handler: TypeHandler
@@ -322,6 +426,10 @@ EN_RUECKWEG_BAHNHOF_2:
   - handler: CommandHandler
     command: weiter
     action: en_bahnhof_ueberfuehrung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_bahnhof_ueberfuehrung
 
   - handler: TypeHandler
     type: Update
@@ -330,6 +438,10 @@ EN_RUECKWEG_BAHNHOF_2:
 EN_BAHNHOF_UEBERFUERUNG:
   - handler: CommandHandler
     command: weiter
+    action: en_bahnhof_ueberfuehrung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_bahnhof_ueberfuehrung
 
   - handler: TypeHandler
@@ -340,6 +452,10 @@ EN_WEG_SCIENCE_PARK:
   - handler: CommandHandler
     command: weiter
     action: en_blick_science_park
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_blick_science_park
 
   - handler: TypeHandler
     type: Update
@@ -348,6 +464,10 @@ EN_WEG_SCIENCE_PARK:
 EN_BLICK_SCIENCE_PARK:
   - handler: CommandHandler
     command: weiter
+    action: en_ende_bahnhof
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_ende_bahnhof
 
   - handler: TypeHandler
@@ -368,6 +488,10 @@ EN_FEEDBACK:
 
   - handler: CommandHandler
     command: weiter
+    action: en_ende_feedback
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: en_ende_feedback
 
   - handler: TypeHandler

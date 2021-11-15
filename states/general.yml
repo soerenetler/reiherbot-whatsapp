@@ -27,7 +27,7 @@ START:
 NAME:
   - handler: MessageHandler
     filter: regex
-    regex: "^(Nein, nenn mich lieber anders! 👻|Nein|Ups, verschrieben 🙈)$"
+    regex: NEIN_PATTERN
     action: name_frage
   - handler: CommandHandler
     command: Nein
@@ -35,7 +35,7 @@ NAME:
 
   - handler: MessageHandler
     filter: regex
-    regex: "^(Ja, gerne! 😎|Das klingt besser 😊|Ja)$"
+    regex: JA_PATTERN
     action: datenschutz
   - handler: CommandHandler
     command: Ja
@@ -56,7 +56,7 @@ EN_NAME:
 
   - handler: MessageHandler
     filter: regex
-    regex: "^(Sure 😎|Sounds better 😊|yes)$"
+    regex: "^(Sure 😎|Sounds better 😊|yes|Yes)$"
     action: en_datenschutz
   - handler: CommandHandler
     command: "yes"
@@ -90,7 +90,7 @@ DATENSCHUTZ:
     action: datenschutz_ablehnen
   - handler: MessageHandler
     filter: regex
-    regex: "^(Nein|Lieber nicht ⚔️)$"
+    regex: NEIN_PATTERN
     action: datenschutz_ablehnen
 
   - handler: CommandHandler
@@ -101,7 +101,7 @@ DATENSCHUTZ:
     action: startpunkt
   - handler: MessageHandler
     filter: regex
-    regex: "^(Ja|Ja, klar 🌻|Ich stimme der Datenschutzerklärung zu 🌻)$"
+    regex: JA_PATTERN
     action: startpunkt
 
   - handler: TypeHandler
@@ -135,7 +135,7 @@ EN_DATENSCHUTZ:
 STARTPUNKT:
   - handler: MessageHandler
     filter: regex
-    regex: "^(schon da ⚓|Ja)$"
+    regex: JA_PATTERN
     action: frage_bahnhof_gif
   - handler: CommandHandler
     command: Ja
@@ -143,7 +143,7 @@ STARTPUNKT:
 
   - handler: MessageHandler
     filter: regex
-    regex: "^(Weiter|weiter)$"
+    regex: WEITER_PATTERN
     action: frage_bahnhof_gif
   - handler: CommandHandler
     command: Weiter
@@ -151,7 +151,7 @@ STARTPUNKT:
 
   - handler: MessageHandler
     filter: regex
-    regex: "^(noch auf dem Weg 😱|Nein)$"
+    regex: NEIN_PATTERN
     action: weg_zum_bahnhof
   - handler: CommandHandler
     command: Nein

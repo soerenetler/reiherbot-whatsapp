@@ -3,6 +3,8 @@ import yaml
 from WhatsAppUpdate import WhatsAppUpdate
 import re
 
+from pattern import EMOJI_PATTERN, WEITER_PATTERN, WOHIN_PATTERN, JA_PATTERN, NEIN_PATTERN
+
 def read_state_yml(filename, actions={}, prechecks:List=[]):
     with open(filename) as file:
         yaml_dict = yaml.load(file, Loader=yaml.FullLoader)
@@ -14,7 +16,23 @@ def read_state_yml(filename, actions={}, prechecks:List=[]):
         for handler in handlers:
             if handler["handler"] == "MessageHandler":
                 if handler["filter"] == "regex":
-                    newHandler = MessageHandler(RegexFilter(handler["regex"]), actions[handler["action"]])
+                    if handler["regex"] == "EMOJI_PATTERN":
+                        newHandler = MessageHandler(RegexFilter(
+                            EMOJI_PATTERN), actions[handler["action"]])
+                    elif handler["regex"] == "WEITER_PATTERN":
+                        newHandler = MessageHandler(RegexFilter(
+                            WEITER_PATTERN), actions[handler["action"]])
+                    elif handler["regex"] == "WOHIN_PATTERN":
+                        newHandler = MessageHandler(RegexFilter(
+                            WOHIN_PATTERN), actions[handler["action"]])
+                    elif handler["regex"] == "JA_PATTERN":
+                        newHandler = MessageHandler(RegexFilter(
+                            JA_PATTERN), actions[handler["action"]])
+                    elif handler["regex"] == "NEIN_PATTERN":
+                        newHandler = MessageHandler(RegexFilter(
+                            NEIN_PATTERN), actions[handler["action"]])
+                    else:
+                        newHandler = MessageHandler(RegexFilter(handler["regex"]), actions[handler["action"]])
                 elif handler["filter"] == "text":
                     newHandler = MessageHandler(TextFilter(), actions[handler["action"]])
                 elif handler["filter"] == "photo":

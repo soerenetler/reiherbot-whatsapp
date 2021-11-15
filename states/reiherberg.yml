@@ -11,6 +11,10 @@ BAHNHOF_FRAGE_GIF_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: frage_bahnhof
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: frage_bahnhof
 
   - handler: TypeHandler
     type: Update
@@ -19,6 +23,10 @@ BAHNHOF_FRAGE_GIF_AUFLOESUNG:
 BAHNHOF_FRAGE:
   - handler: CommandHandler
     command: weiter
+    action: frage_bahnhof_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_bahnhof_aufloesung
 
   - handler: MessageHandler
@@ -34,6 +42,10 @@ BAHNHOF_FRAGE_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: weg01
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg01
 
   - handler: TypeHandler
     type: Update
@@ -42,6 +54,10 @@ BAHNHOF_FRAGE_AUFLOESUNG:
 WEG01:
   - handler: CommandHandler
     command: weiter
+    action: frage_quiz
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_quiz
 
   - handler: TypeHandler
@@ -60,6 +76,10 @@ FRAGE_QUIZ_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: weg_01a
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_01a
 
   - handler: TypeHandler
     type: Update
@@ -68,6 +88,10 @@ FRAGE_QUIZ_AUFLOESUNG:
 WEG01A:
   - handler: CommandHandler
     command: weiter
+    action: frage_ubahn
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_ubahn
 
   - handler: TypeHandler
@@ -86,6 +110,10 @@ FRAGE_UBAHN_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: weg02
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg02
 
   - handler: TypeHandler
     type: Update
@@ -94,6 +122,10 @@ FRAGE_UBAHN_AUFLOESUNG:
 WEG02:
   - handler: CommandHandler
     command: weiter
+    action: frage_weinmeisterstrasse
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_weinmeisterstrasse
 
   - handler: TypeHandler
@@ -112,6 +144,10 @@ FRAGE_WEINMEISTERATRASSE_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: fehlerbild_reiherberg_bank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: fehlerbild_reiherberg_bank
 
   - handler: TypeHandler
     type: Update
@@ -129,6 +165,10 @@ FEHLERBILD_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: aufstieg_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: aufstieg_reiherberg
 
   - handler: TypeHandler
     type: Update
@@ -137,6 +177,10 @@ FEHLERBILD_REIHERBERG_AUFLOESUNG:
 AUFSTIEG_REIHERBERG:
   - handler: CommandHandler
     command: weiter
+    action: schaetzfrage_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: schaetzfrage_reiherberg
 
   - handler: TypeHandler
@@ -157,6 +201,10 @@ SCHAETZFRAGE_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: foto_reiherberg
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: foto_reiherberg
 
   - handler: TypeHandler
     type: Update
@@ -165,6 +213,10 @@ SCHAETZFRAGE_REIHERBERG_AUFLOESUNG:
 FOTO_REIHERBERG:
   - handler: CommandHandler
     command: weiter
+    action: foto_reiherberg_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: foto_reiherberg_aufloesung
   - handler: MessageHandler
     filter: photo
@@ -178,6 +230,10 @@ FOTO_REIHERBERG_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
     action: weg_kirche_1
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_kirche_1
 
   - handler: TypeHandler
     type: Update
@@ -187,6 +243,10 @@ WEG_KIRCHE_1:
   - handler: CommandHandler
     command: weiter
     action: weg_kirche_2
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_kirche_2
 
   - handler: TypeHandler
     type: Update
@@ -195,6 +255,10 @@ WEG_KIRCHE_1:
 WEG_KIRCHE_2:
   - handler: CommandHandler
     command: weiter
+    action: kirche_wortraetsel
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: kirche_wortraetsel
 
   - handler: TypeHandler
@@ -223,6 +287,10 @@ KIRCHE_AUFLOESEUNG:
   - handler: CommandHandler
     command: weiter
     action: weg_storchenbank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_storchenbank
 
   - handler: TypeHandler
     type: Update
@@ -231,6 +299,10 @@ KIRCHE_AUFLOESEUNG:
 WEG_STORCHENBANK:
   - handler: CommandHandler
     command: weiter
+    action: frage_storchenbank
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_storchenbank
 
   - handler: TypeHandler
@@ -251,6 +323,10 @@ KAPELLE:
   - handler: CommandHandler
     command: weiter
     action: weg_schule
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_schule
 
   - handler: TypeHandler
     type: Update
@@ -259,6 +335,10 @@ KAPELLE:
 WEG_SCHULE:
   - handler: CommandHandler
     command: weiter
+    action: schule
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: schule
 
   - handler: TypeHandler
@@ -269,6 +349,10 @@ SCHULE:
   - handler: CommandHandler
     command: weiter
     action: weg_landhotel
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_landhotel
 
   - handler: TypeHandler
     type: Update
@@ -278,6 +362,10 @@ WEG_LANDHOTEL:
   - handler: CommandHandler
     command: weiter
     action: weg_feuerwehr
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: weg_feuerwehr
 
   - handler: TypeHandler
     type: Update
@@ -286,6 +374,10 @@ WEG_LANDHOTEL:
 FEUERWEHR:
   - handler: CommandHandler
     command: weiter
+    action: frage_feuerwehr
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: frage_feuerwehr
 
   - handler: TypeHandler
@@ -303,7 +395,11 @@ FRAGE_FEUERWEHR:
 FRAGE_FEUERWEHR_AUFLOESUNG:
   - handler: CommandHandler
     command: weiter
-    action: rueckweg_bahnhof_2
+    action: rueckweg_bahnhof_1
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: rueckweg_bahnhof_1
 
   - handler: TypeHandler
     type: Update
@@ -312,6 +408,10 @@ FRAGE_FEUERWEHR_AUFLOESUNG:
 RUECKWEG_BAHNHOF_1:
   - handler: CommandHandler
     command: weiter
+    action: rueckweg_bahnhof_2
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: rueckweg_bahnhof_2
 
   - handler: TypeHandler
@@ -322,6 +422,10 @@ RUECKWEG_BAHNHOF_2:
   - handler: CommandHandler
     command: weiter
     action: bahnhof_ueberfuehrung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: bahnhof_ueberfuehrung
 
   - handler: TypeHandler
     type: Update
@@ -330,6 +434,10 @@ RUECKWEG_BAHNHOF_2:
 BAHNHOF_UEBERFUERUNG:
   - handler: CommandHandler
     command: weiter
+    action: bahnhof_ueberfuehrung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: bahnhof_ueberfuehrung
 
   - handler: TypeHandler
@@ -340,6 +448,10 @@ WEG_SCIENCE_PARK:
   - handler: CommandHandler
     command: weiter
     action: blick_science_park
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: blick_science_park
 
   - handler: TypeHandler
     type: Update
@@ -348,6 +460,10 @@ WEG_SCIENCE_PARK:
 BLICK_SCIENCE_PARK:
   - handler: CommandHandler
     command: weiter
+    action: ende_bahnhof
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: ende_bahnhof
 
   - handler: TypeHandler
@@ -367,6 +483,10 @@ FEEDBACK:
 
   - handler: CommandHandler
     command: weiter
+    action: ende_feedback
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
     action: ende_feedback
 
   - handler: TypeHandler
