@@ -67,6 +67,10 @@ frage_bahnhof_aufloesung:
       *Richtung Potsdam Hbf.*
       🕛 zur vollen Stunde von Gleis 2 
       🕡 zur halben Stunde von Gleis 1
+  - type: audio
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
+    title: "Bahnhof Golm"
+    performer: "Reiherbot"
   - type: message
     text: Wenn du mehr Infos zum Bahnhof Golm haben möchtest, tippe auf "mehr Infos".
     InlineKeyboard:
@@ -76,15 +80,6 @@ frage_bahnhof_aufloesung:
         data: "action:weg01"
   - type: return
     state: BAHNHOF_FRAGE_AUFLOESUNG
-
-info_bahnhof:
-  - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
-    title: "Bahnhof Golm"
-    performer: "Reiherbot"
-    InlineKeyboard:
-      - text: "🐾 weiter"
-        data: "action:weg01"
 
 weg01:
   - type: message
@@ -221,15 +216,6 @@ frage_weinmeisterstrasse_aufloesung:
     text: All diese Gründe führten dazu, dass in Golm heute kein Wein mehr angebaut wird.
   - type: message
     text: Die Weinmeisterstraße ist aus dieser Zeit jedoch geblieben.
-    InlineKeyboard:
-      - text: "💡 mehr Infos"
-        data: "action:info_weinmeister"
-      - text: "🐾 weiter"
-        data: "action:fehlerbild_reiherberg_bank"
-  - type: return
-    state: FRAGE_WEINMEISTERATRASSE_AUFLOESUNG
-
-info_weinmeister:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
@@ -239,8 +225,12 @@ info_weinmeister:
   - type: message
     text: 🍷
     InlineKeyboard:
+      - text: "💡 mehr Infos"
+        data: "action:info_weinmeister"
       - text: "🐾 weiter"
         data: "action:fehlerbild_reiherberg_bank"
+  - type: return
+    state: FRAGE_WEINMEISTERATRASSE_AUFLOESUNG
 
 fehlerbild_reiherberg_bank:
   - type: message
@@ -276,6 +266,10 @@ fehlerbild_reiherberg_aufloesung:
     text: |
       Früher gab es hier einen kleinen Laden.
       Heute befindet sich dort der art supermarkt - eine Gallerie.
+  - type: audio
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
+    title: "Supermarkt Golm"
+    performer: "Reiherbot"
     InlineKeyboard:
       - text: "💡 mehr Infos"
         data: "action:info_supermarkt"
@@ -283,17 +277,6 @@ fehlerbild_reiherberg_aufloesung:
         data: "action:aufstieg_reiherberg"
   - type: return
     state: FEHLERBILD_REIHERBERG_AUFLOESUNG
-
-info_supermarkt:
-  - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
-    title: "Supermarkt Golm"
-    performer: "Reiherbot"
-  - type: message
-    text: "Mehr über die Ausstellungen findest du hier: https://artsupermarkt.de/"
-    InlineKeyboard:
-      - text: "🐾 weiter"
-        data: "action:aufstieg_reiherberg"
 
 aufstieg_reiherberg:
   - type: message
@@ -304,6 +287,10 @@ aufstieg_reiherberg:
   - type: message
     text: >
       Auf dem Weg kannst du in Ruhe die Natur genießen oder die Sage über die Entstehung des Reiherbergs anhören.
+  - type: audio
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
+    title: "Reiherberg Sage"
+    performer: "Reiherbot"
     InlineKeyboard:
       - text: "💡 Sage"
         data: "action:info_sage_reiherberg"
@@ -311,15 +298,6 @@ aufstieg_reiherberg:
         data: "action:schaetzfrage_reiherberg"
   - type: return
     state: AUFSTIEG_REIHERBERG
-
-info_sage_reiherberg:
-  - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
-    title: "Reiherberg Sage"
-    performer: "Reiherbot"
-    InlineKeyboard:
-      - text: "🐾 weiter"
-        data: "action:schaetzfrage_reiherberg"
 
 schaetzfrage_reiherberg:
   - type: message
@@ -347,6 +325,10 @@ schaetzfrage_reiherberg_aufloesung:
       Mit 68 Metern ist der Reiherberg der zweithöchste Berg in Golm. 
       Höher ist nur Ehrenpfortenberg. 
       Doch dafür ist die Aussicht von hier unvergleichlich und lädt zum Fotografieren ein. 🌄
+  - type: audio
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
+    title: "Reiherberg"
+    performer: "Reiherbot"
     InlineKeyboard:
       - text: "💡 mehr Infos"
         data: "action:info_reiherberg"
@@ -354,15 +336,6 @@ schaetzfrage_reiherberg_aufloesung:
         data: "action:foto_reiherberg"
   - type: return
     state: SCHAETZFRAGE_REIHERBERG_AUFLOESUNG
-
-info_reiherberg:
-  - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
-    title: "Reiherberg"
-    performer: "Reiherbot"
-    InlineKeyboard:
-      - text: "🐾 weiter"
-        data: "action:foto_reiherberg"
 
 foto_reiherberg:
   - type: message
@@ -498,6 +471,10 @@ kirche_aufloesung:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Dohle.jpg"
   - type: message
     text: "Willst du mehr über die Kirche und ihre Bewohner:innen erfahren?"
+  - type: audio
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
+    title: "Kaiser-Friedrich-Kirche"
+    performer: "Reiherbot"
     InlineKeyboard:
       - text: "💡 mehr Infos"
         data: "action:info_kirche"
@@ -505,15 +482,6 @@ kirche_aufloesung:
         data: "action:weg_storchenbank"
   - type: return
     state: KIRCHE_AUFLOESEUNG
-
-info_kirche:
-  - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
-    title: "Kaiser-Friedrich-Kirche"
-    performer: "Reiherbot"
-    InlineKeyboard:
-      - text: "🐾 weiter"
-        data: "action:weg_storchenbank"
 
 weg_storchenbank:
   - type: message
@@ -550,15 +518,6 @@ frage_storchenbank_aufloesung:
       Wenn du auf der Storchenbank sitzt, steht rechts von dir die Dorfkapelle.
       Das ist das älteste Gebäude in ganz Potsdam.
       Hier finden regelmäßig Veranstaltungen statt, über die du vom [Kulturverein](https://www.kultur-in-golm.de/) mehr erfahren kannst.
-    InlineKeyboard:
-      - text: "💡 mehr Infos"
-        data: "action:info_kapelle"
-      - text: "🐾 weiter"
-        data: "action:weg_schule"
-  - type: return
-    state: KAPELLE
-
-info_kapelle:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die alte Kapelle.mp3
     title: "Kapelle"
@@ -566,8 +525,12 @@ info_kapelle:
   - type: message
     text: ⛪️
     InlineKeyboard:
+      - text: "💡 mehr Infos"
+        data: "action:info_kapelle"
       - text: "🐾 weiter"
         data: "action:weg_schule"
+  - type: return
+    state: KAPELLE
 
 weg_schule:
   - type: message
@@ -613,6 +576,10 @@ schule:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg 1903.PNG"
   - type: message
     text: Hier sind Golmer:innen und Besucher aus der Region auf Kartoffelsäcken auch im Sommer den Berg hinunter gerutscht.
+  - type: audio
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/08_Sommerrodelbahn.mp3
+    title: "Schule und Rodelbahn"
+    performer: "Reiherbot"
     InlineKeyboard:
       - text: "🛷 Wirklich?"
         data: "action:info_schule"
@@ -620,17 +587,6 @@ schule:
         data: "action:weg_landhotel"
   - type: return
     state: SCHULE
-
-info_schule:
-  - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Schule 1925.PNG"
-  - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/08_Sommerrodelbahn.mp3
-    title: "Schule und Rodelbahn"
-    performer: "Reiherbot"
-    InlineKeyboard:
-      - text: "🐾 Weiter"
-        data: "action:weg_landhotel"
 
 weg_landhotel:
   - type: message
@@ -686,15 +642,6 @@ frage_feuerwehr_aufloesung:
   - type: message
     text: >
       In diesem Turm werden nach einem Einsatz die Schläuche getrocknet.
-    InlineKeyboard:
-      - text: "👩‍🚒 Feuerwehrfrauen"
-        data: "action:info_feuerwehr"
-      - text: "🐾 Weiter"
-        data: "action:rueckweg_bahnhof_1"
-  - type: return
-    state: FRAGE_FEUERWEHR_AUFLOESUNG
-
-info_feuerwehr:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/09_Feuerwehrfrauen.mp3
     title: "👩‍🚒 Feuerwehrfrauen"
@@ -703,8 +650,12 @@ info_feuerwehr:
     parse_mode: MarkdownV2
     text: Mehr zur Freiwillige Feuerwehr findest du [hier](https://feuerwehr-golm.jimdofree.com/).
     InlineKeyboard:
+      - text: "👩‍🚒 Feuerwehrfrauen"
+        data: "action:info_feuerwehr"
       - text: "🐾 Weiter"
         data: "action:rueckweg_bahnhof_1"
+  - type: return
+    state: FRAGE_FEUERWEHR_AUFLOESUNG
 
 #weg_vierseitenhof:
 #    - type: message

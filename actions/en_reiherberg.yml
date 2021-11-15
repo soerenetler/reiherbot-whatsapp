@@ -63,24 +63,17 @@ en_frage_bahnhof_aufloesung:
       *to Potsdam main station*
       🕛 from platform 2 on the hour 
       🕡 from platform 1 on the half hour
-  - type: message
-    text: If you want to know more about the railway station Golm, click on "more info".
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_bahnhof"
-      - text: "🐾 continue"
-        data: "action:en_weg01"
-  - type: return
-    state: EN_BAHNHOF_FRAGE_AUFLOESUNG
-
-en_info_bahnhof:
   - type: audio
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
+  - type: message
+    text: If you want to know more about the railway station Golm, click on "more info".
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_weg01"
+  - type: return
+    state: EN_BAHNHOF_FRAGE_AUFLOESUNG
 
 en_weg01:
   - type: message
@@ -219,15 +212,6 @@ en_frage_weinmeisterstrasse_aufloesung:
     text: All these reasons have led to the fact that wine is no longer grown in Golm today.
   - type: message
     text: The street name Weinmeisterstraße, however, still remains here.
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_weinmeister"
-      - text: "🐾 continue"
-        data: "action:en_fehlerbild_reiherberg_bank"
-  - type: return
-    state: EN_FRAGE_WEINMEISTERATRASSE_AUFLOESUNG
-
-en_info_weinmeister:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
@@ -239,6 +223,8 @@ en_info_weinmeister:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_fehlerbild_reiherberg_bank"
+  - type: return
+    state: EN_FRAGE_WEINMEISTERATRASSE_AUFLOESUNG
 
 en_fehlerbild_reiherberg_bank:
   - type: message
@@ -272,16 +258,6 @@ en_fehlerbild_reiherberg_aufloesung:
     wrong_answer_text: "That was not the mistake!"
   - type: message
     text: There used to be a small store here. Today, a small gallery - the art supermarket - is located here.
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_supermarkt"
-      - text: "🐾 continue"
-        data: "action:en_aufstieg_reiherberg"
-
-  - type: return
-    state: EN_FEHLERBILD_REIHERBERG_AUFLOESUNG
-
-en_info_supermarkt:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art Supermarkt.mp3
     title: "Supermarkt Golm"
@@ -291,6 +267,9 @@ en_info_supermarkt:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_aufstieg_reiherberg"
+
+  - type: return
+    state: EN_FEHLERBILD_REIHERBERG_AUFLOESUNG
 
 en_aufstieg_reiherberg:
   - type: message
@@ -303,15 +282,6 @@ en_aufstieg_reiherberg:
     text: >
       If that's too quiet for you, you can also listen to the legend of Reiherberg on the way.
       Let me know when you reach the viewing platform.
-    InlineKeyboard:
-      - text: "💡 The Legend"
-        data: "action:en_info_sage_reiherberg"
-      - text: "🐾 continue"
-        data: "action:en_schaetzfrage_reiherberg"
-  - type: return
-    state: EN_AUFSTIEG_REIHERBERG
-
-en_info_sage_reiherberg:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie der Reiherberg entstanden ist.mp3
     title: "Reiherberg Sage"
@@ -319,6 +289,8 @@ en_info_sage_reiherberg:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_schaetzfrage_reiherberg"
+  - type: return
+    state: EN_AUFSTIEG_REIHERBERG
 
 en_schaetzfrage_reiherberg:
   - type: message
@@ -344,15 +316,6 @@ en_schaetzfrage_reiherberg_aufloesung:
       At 68 metres, the Reiherberg is the second highest mountain in Golm. 
       Only the 71-metre-high Ehrenpfortenberg is higher. 
       But the view from Reiherberg is incomparable and invites you to take photos. 🌄
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_reiherberg"
-      - text: "🐾 continue"
-        data: "action:en_foto_reiherberg"
-  - type: return
-    state: EN_SCHAETZFRAGE_REIHERBERG_AUFLOESUNG
-
-en_info_reiherberg:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der Reiherberg.mp3
     title: "Reiherberg"
@@ -360,6 +323,8 @@ en_info_reiherberg:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_foto_reiherberg"
+  - type: return
+    state: EN_SCHAETZFRAGE_REIHERBERG_AUFLOESUNG
 
 en_foto_reiherberg:
   - type: message
@@ -490,15 +455,6 @@ en_kirche_aufloesung:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Dohle.jpg"
   - type: message
     text: Do you want to learn more about the church, or rather move on?
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_weg_storchenbank"
-      - text: "🐾 continue"
-        data: "action:en_info_kirche"
-  - type: return
-    state: EN_KIRCHE_AUFLOESEUNG
-
-en_info_kirche:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
     title: "Kaiser-Friedrich-Kirche"
@@ -506,6 +462,8 @@ en_info_kirche:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_weg_storchenbank"
+  - type: return
+    state: EN_KIRCHE_AUFLOESEUNG
 
 en_weg_storchenbank:
   - type: message
@@ -543,15 +501,6 @@ en_frage_storchenbank_aufloesung:
     text: >
       But now it's time to head back, isn't it?
       Don't worry, there are still a few things left to discover. 😉
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_kapelle"
-      - text: "🐾 continue"
-        data: "action:en_weg_schule"
-  - type: return
-    state: EN_KAPELLE
-
-en_info_kapelle:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die alte Kapelle.mp3
     title: "Kapelle"
@@ -560,7 +509,9 @@ en_info_kapelle:
     text: "https://t.me/pdm_golm"
     InlineKeyboard:
       - text: "🐾 continue"
-        data: "action:en_info_kapelle"
+        data: "action:en_weg_schule"
+  - type: return
+    state: EN_KAPELLE
 
 en_weg_schule:
   - type: message
@@ -589,17 +540,6 @@ en_schule:
     text: >
       Among other things, the local council is meeting here today.
       Unfortunately, there is no more sliding here.
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_schule"
-      - text: "🐾 continue"
-        data: "action:en_weg_landhotel"
-  - type: return
-    state: EN_SCHULE
-
-en_info_schule:
-  - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Schule 1925.PNG"
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/08_Sommerrodelbahn.mp3
     title: "Schule und Rodelbahn"
@@ -607,6 +547,8 @@ en_info_schule:
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_weg_landhotel"
+  - type: return
+    state: EN_SCHULE
 
 en_weg_landhotel:
   - type: message
@@ -661,15 +603,6 @@ en_frage_feuerwehr_aufloesung:
     wrong_answer_text: "Ups!"
   - type: message
     text: This tower is used to dry the hoses after a firefighting job.
-    InlineKeyboard:
-      - text: "💡 more info"
-        data: "action:en_info_feuerwehr"
-      - text: "🐾 continue"
-        data: "action:en_weg_vierseitenhof"
-  - type: return
-    state: EN_FRAGE_FEUERWEHR_AUFLOESUNG
-
-en_info_feuerwehr:
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/09_Feuerwehrfrauen.mp3
     title: "Voluntary fire brigade "
@@ -678,7 +611,9 @@ en_info_feuerwehr:
     text: https://feuerwehr-golm.jimdofree.com/
     InlineKeyboard:
       - text: "🐾 continue"
-        data: "action:en_rueckweg_bahnhof_1"
+        data: "action:en_weg_vierseitenhof"
+  - type: return
+    state: EN_FRAGE_FEUERWEHR_AUFLOESUNG
 
 #weg_vierseitenhof:
 #    - type: message
