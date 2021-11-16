@@ -119,7 +119,7 @@ datenschutz:
 
 en_datenschutz:
   - type: message
-    text: 'Cool, dass du da bist, {name}'
+    text: 'Cool to have you on board, {name}'
   - type: message
     text: To improve the guide we would like to collect some user data. More information here www.reiherbot.de/datenschutz
   - type: message

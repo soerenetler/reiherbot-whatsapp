@@ -69,7 +69,7 @@ en_frage_bahnhof_aufloesung:
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: message
-    text: If you want to know more about the railway station Golm, click on "more info".
+    text: _🪶 Remember, write *continue* to continue in the tour!_
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_weg01"
@@ -87,7 +87,10 @@ en_weg01:
       The tracks should stay on the right from you.
       Follow the road until you reach a small footpath.
   - type: message
-    text: "Let me know when you are there!"
+    text: |
+          Let me know when you are there!
+          
+          🪶 and write *continue*!_
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_frage_quiz"
@@ -100,10 +103,12 @@ en_frage_quiz:
   - type: poll
     question: Did you know that herons are the heraldic animals of Golm? Why do you think is it so?
     options:
-      - "1️⃣The King of Prussia Friedrich IV bred herons in Golm for the *Sanssouci* Park."
+      - "1️⃣ The King of Prussia Friedrich IV bred herons in Golm for the *Sanssouci* Park."
       - "2️⃣ Many herons lived in the *moors* around Golm."
       - "3️⃣ In *mythology* herons stand for good harvests."
     correct_option_id: 1
+  - type: message
+    text: _🪶 Reply with one of the symbols or the marked keyword!_
   - type: return
     state: EN_FRAGE_QUIZ
 
@@ -116,7 +121,7 @@ en_frage_quiz_aufloesung:
     func: eval_quiz
     correct_option_id: "(2️⃣|2|moor)"
     correct_answer_text: "Correct, {name} 🎉"
-    wrong_answer_text: "Not quite!"
+    wrong_answer_text: "Not quite right!"
   - type: sticker
     id: "CAACAgIAAxkBAAIiL2ET4VMouosJKz-SHErJSCIjJjABAAL0DQAC8kuhSBy3iiOyQmuyIAQ"
   - type: message
@@ -124,6 +129,8 @@ en_frage_quiz_aufloesung:
       Many herons have always lived around Golm.
       They felt particularly at home in the moors.
       With a bit of luck you can spot one on our way.
+
+      _🪶 and with *continue* you continue._
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_weg_01a"
@@ -163,7 +170,7 @@ en_frage_ubahn_tipp:
 en_frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(1️⃣|Kurfürstendamm|Kurfuerstendamm)"
+    correct_option_id: "(1|1️⃣|Kurfürstendamm|Kurfuerstendamm)"
     correct_answer_text: "Correct, {name} 🎉 it was the Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Did you miss the sign? The correct answer was Kurfürstendamm!"
@@ -194,10 +201,10 @@ en_frage_weinmeisterstrasse:
   - type: poll
     question: What do you think the reason it had happened was?
     options:
-      - "🤑 A tax made wine growing more expensive."
-      - "🥶 In the cold winter of 1745 the grapevines froze to death."
-      - "🤮 People realised that their own wine did not taste that good."
-      - "🤑🥶🤮 All the reasons had led to this."
+      - "🤑 A *tax* made wine growing more expensive."
+      - "🥶 In the cold *winter* of 1745 the grapevines froze to death."
+      - "🤮 People realised that their *own wine* did not taste that good."
+      - "🤑🥶🤮 *All* the reasons had led to this."
     correct_option_id: 3
   - type: return
     state: EN_FRAGE_WEINMEISTERATRASSE
@@ -331,8 +338,8 @@ en_foto_reiherberg:
   - type: message
     parse_mode: MarkdownV2
     text: >
-      "Take a pic and send it to me. 📸"
-      "You can find the photos on our [website](reiherbot.de). afterwards."
+      Take a pic and send it to me. 📸
+      You can find the photos on our website (reiherbot.de) afterwards.
     InlineKeyboard:
       - text: "🧀 Cheese"
         data: "action:en_foto_reiherberg_anweisung"
@@ -453,7 +460,7 @@ en_kirche_aufloesung:
   - type: photo
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Dohle.jpg"
   - type: message
-    text: Do you want to learn more about the church, or rather move on?
+    text: Do you want to learn more about the church, or rather continue?
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/06_church.mp3
     title: "Kaiser-Friedrich-Kirche"
@@ -703,11 +710,11 @@ en_blick_science_park:
       See the buildings on the horizon? 🌇
       This is Potsdam Science Park.
       You can also discover it online:
-    InlineKeyboard:
-      - text: "🚀 Impressive drone images"
-        url: "https://potsdam-sciencepark.de/der-park/#rundflug-potsdam-science-park"
-      - text: "🧭 Interactive map"
-        url: "https://potsdam-sciencepark.de/?map=open"
+
+      🚀 Impressive drone images"
+      https://potsdam-sciencepark.de/der-park/#rundflug-potsdam-science-park
+      🧭 Interactive map"
+      https://potsdam-sciencepark.de/?map=open
   - type: message
     text: >
       Enjoy!

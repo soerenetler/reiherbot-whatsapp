@@ -83,7 +83,7 @@ def eval_kirche_wortraetsel(client, update: WhatsAppUpdate, context):
 def eval_storchenbank(client, update: WhatsAppUpdate, context):
     antwort = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 2012
-    if antwort.lower() == echter_wert:
+    if antwort == echter_wert:
         client.messages.create(
             body='You found the board! All the return dates and the litter of the stork family are marked here.'.format(
                 name=context["name"]),
