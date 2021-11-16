@@ -52,12 +52,17 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
                       Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.gif',
                       Body= gif,
                       ACL='public-read',
+                      ContentType='ContentType='
                       #Metadata={
                       #    'x-amz-meta-my-key': 'your-value'
                       #}
                       )
 
-    # TODO send gif
+    client.messages.create(
+                    media_url="https://reiherbot-whatsapp.fra1.digitaloceanspaces.com/bahnhof_gif_gif/"+ time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.gif',
+                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+                    to=update.From
+                )
     # update.message.reply_document(gif)
 
 
