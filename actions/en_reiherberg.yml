@@ -63,7 +63,7 @@ en_frage_bahnhof_aufloesung:
       🕛 from platform 2 on the hour 
       🕡 from platform 1 on the half hour
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.mp3"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/01_station.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: message
@@ -214,7 +214,7 @@ en_frage_weinmeisterstrasse_aufloesung:
   - type: photo
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer_Wein.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/02_wine.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
   - type: message
@@ -258,7 +258,7 @@ en_fehlerbild_reiherberg_aufloesung:
   - type: message
     text: There used to be a small store here. Today, a small gallery - the art supermarket - is located here.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/03_Art_Supermarkt.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/03_art_supermarkt.mp3
     title: "Supermarkt Golm"
     performer: "Reiherbot"
   - type: message
@@ -282,7 +282,7 @@ en_aufstieg_reiherberg:
       If that's too quiet for you, you can also listen to the legend of Reiherberg on the way.
       Let me know when you reach the viewing platform.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/04_Wie_der_Reiherberg_entstanden_ist.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/04_sage.mp3
     title: "Reiherberg Sage"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -316,7 +316,7 @@ en_schaetzfrage_reiherberg_aufloesung:
       Only the 71-metre-high Ehrenpfortenberg is higher. 
       But the view from Reiherberg is incomparable and invites you to take photos. 🌄
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/05_Der_Reiherberg.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/05_Reiherberg.mp3
     title: "Reiherberg"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -455,7 +455,7 @@ en_kirche_aufloesung:
   - type: message
     text: Do you want to learn more about the church, or rather move on?
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/06_church.mp3
     title: "Kaiser-Friedrich-Kirche"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -501,7 +501,7 @@ en_frage_storchenbank_aufloesung:
       But now it's time to head back, isn't it?
       Don't worry, there are still a few things left to discover. 😉
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die_alte_Kapelle.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/07_chapel.mp3
     title: "Kapelle"
     performer: "Reiherbot"
   - type: message
@@ -540,7 +540,7 @@ en_schule:
       Among other things, the local council is meeting here today.
       Unfortunately, there is no more sliding here.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/08_Sommerrodelbahn.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/08_school.mp3
     title: "Schule und Rodelbahn"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -603,7 +603,7 @@ en_frage_feuerwehr_aufloesung:
   - type: message
     text: This tower is used to dry the hoses after a firefighting job.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/09_Feuerwehrfrauen.mp3
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/09_fire_department.mp3
     title: "Voluntary fire brigade "
     performer: "Reiherbot"
   - type: message
