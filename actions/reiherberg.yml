@@ -370,7 +370,7 @@ foto_reiherberg_aufloesung:
   - type: message
     text: "Tolle Aussicht, oder? "
   - type: media_group
-    files:
+    urls:
       - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg14.jpg"
       - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg18.jpg"
       - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg17.jpg"

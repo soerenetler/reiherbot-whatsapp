@@ -2,6 +2,7 @@ from WhatsAppUpdate import WhatsAppUpdate
 import yaml
 
 from configparser import ConfigParser
+import time
 
 config = ConfigParser()
 config.read("config.ini")
@@ -27,6 +28,7 @@ class Action():
 
     def __call__(self, client, update: WhatsAppUpdate, context):
         for item in self.actions:
+            time.sleep(.2)
             if item["type"] == "message":
                 client.messages.create(
                     body=item["text"].format(
