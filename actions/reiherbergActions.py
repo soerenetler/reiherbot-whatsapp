@@ -44,7 +44,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
     im2_file = BytesIO(im2_bytes) # convert image to file-like object
     im2 = Image.open(im2_file)
 
-    gif = utils.generate_gif(im1, im2)
+    gif = utils.generate_gif(im2, im1)
 
     time_str= str(round(time.time() * 1000))
 
