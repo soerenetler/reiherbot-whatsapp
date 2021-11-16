@@ -49,9 +49,9 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
     time_str= str(datetime.now())
 
     s3_client.put_object(Bucket="reiherbot-whatsapp",
-                      Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.jpg',
+                      Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.gif',
                       Body= gif,
-                      ACL='public',
+                      ACL='public-read',
                       #Metadata={
                       #    'x-amz-meta-my-key': 'your-value'
                       #}
