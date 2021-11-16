@@ -158,6 +158,32 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate, context):
             to=update.From
         )
 
+    differenz = schaetzung - echter_wert
+    if differenz == -1:
+        client.messages.create(
+            body='Es ist eine Meter mehr als du geschätzt hast',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz < -1:
+        client.messages.create(
+            body='Es sind {} Meter mehr als du geschätzt hast.',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz == 1:
+        client.messages.create(
+            body='Es ist eine Meter weniger als du geschätzt hast.',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz > 1:
+        client.messages.create(
+            body='Es sind {} Meter weniger als du geschätzt hast.',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+
 
 def eval_kirche_wortraetsel(client, update: WhatsAppUpdate, context):
     antwort = update.Body
