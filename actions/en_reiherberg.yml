@@ -767,6 +767,6 @@ en_timeout:
   - type: return
     state: EN_END
 
-en_weiter_tipp:
+en_continue_tipp:
   - type: message
     text: "Sorry, I could not understand you. To continue enter *continue* or click the continue button."

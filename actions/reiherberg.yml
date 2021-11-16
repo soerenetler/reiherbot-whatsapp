@@ -91,7 +91,10 @@ weg01:
       Die Schienen sollten rechts von dir liegen. 
       Folge der Straße bis zu einen kleinen Fußweg.
   - type: message
-    text: Dort treffen wir uns wieder!
+    text: |
+          Dort treffen wir uns wieder!
+
+          "_🪶 Wie immer kannst du *weiter* schreiben, wenn du da bist._"
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:frage_quiz"
