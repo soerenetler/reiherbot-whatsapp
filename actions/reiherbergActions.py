@@ -51,8 +51,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
     time_str = str(round(time.time() * 1000))
 
     s3_client.put_object(Bucket="reiherbot-whatsapp",
-                         Key="bahnhof_gif_gif" + "/" + time_str + "_" +
-                             str(update.ProfileName) + "_" +
+                         Key="bahnhof_gif_gif" + "/" + time_str  + "_" +
                          str(update.WaId) + '.gif',
                          Body=gif,
                          ACL='public-read',
@@ -64,8 +63,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
 
     client.messages.create(
         media_url="https://reiherbot-whatsapp.fra1.digitaloceanspaces.com/bahnhof_gif_gif/" +
-        time_str + "_"+str(update.ProfileName) + "_" +
-        str(update.WaId) + '.gif',
+        time_str + "_" + str(update.WaId) + '.gif',
         from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
         to=update.From
     )

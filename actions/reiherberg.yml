@@ -1,10 +1,12 @@
 frage_bahnhof_gif:
   - type: message
-    text: "Du stehst hier vor dem Golmer Bahnhofsgebäude. Das sah früher mal so aus:"
+    text: "Du stehst hier vor dem Golmer Bahnhofsgebäude. Das sah früher mal so aus."
   - type: photo
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg"
   - type: message
     text: "Versuche das Bahnhofsgebäude aus der gleichen Perspektive zu fotografieren und schick mir das Bild. 📸"
+  - type: message
+    text: "_🪶 Schick mir ein *Foto* oder schreibe *weiter*, um zu überspringen._"
   - type: return
     state: BAHNHOF_FRAGE_GIF
 

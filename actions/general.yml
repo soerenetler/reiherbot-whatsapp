@@ -11,12 +11,16 @@ start:
     parse_mode: MarkdownV2
     text: |
           Hi, ich bin Ronni der Reiher! Ich führe dich heute durch Golm.
-          Möchtest du den Rundgang auf 💂‍♀️*Englisch* oder auf 🥨*Deutsch* machen?
+          Möchtest du den Rundgang auf 💂‍♀️ *Englisch* oder auf 🥨 *Deutsch* machen?
+
+          🪶 Du kannst mir deine Antwort einfach schreiben.
   - type: message
     parse_mode: MarkdownV2
     text: |
           _Hi, I'm Ronni the heron! I will be your guide today._
-          _Do you want to take the tour in 🥨*German* or 💂‍♀️*English*?_
+          _Do you want to take the tour in 🥨 *German* or 💂‍♀️ *English*?_
+
+          🪶 You can just write your answer to me.
   - type: return
     state: START
 
@@ -29,9 +33,6 @@ name:
     text: Schön, dass du da bist!
   - type: message
     text: Darf ich dich {name} nennen?
-    ReplyKeyboardMarkup:
-        - text: "Ja, gerne! 😎"
-        - text: "Nein, nenn mich lieber anders! 👻"
   - type: return
     state: NAME
 
@@ -40,9 +41,6 @@ en_name:
     text: Nice to meet you!
   - type: message
     text: May I call you {name}?
-    ReplyKeyboardMarkup:
-        - text: "Sure 😎"
-        - text: "No, better another way! 👻"
   - type: return
     state: EN_NAME
 
@@ -106,10 +104,10 @@ datenschutz:
   - type: message
     text: 'Cool, dass du da bist, {name}'
   - type: message
-    text: Um unsere Stadteilführung weiter zu verbessern würden wir gerne ein paar Daten von dir sammeln.
+    text: Um unsere Stadteilführung weiter zu verbessern würden wir gerne ein paar Daten von dir sammeln. Mehr Infos unter www.reiherbot.de/datenschutz
   - type: message
     parse_mode: MarkdownV2
-    text: Ist das ok für dich? Mehr Infos unter www.reiherbot.de/datenschutz
+    text: "*Ist das ok für dich?*"
     disable_web_page_preview: True
     ReplyKeyboardMarkup:
         - text: "Ja, klar 🌻"
@@ -170,7 +168,7 @@ startpunkt:
   - type: message
     text: Unsere Reise startet am Bahnhof Golm. Ich warte direkt vor dem orangen Bahnhofsgebäude auf dich. 🚉
   - type: message
-    text: Bist du auch schon dort?
+    text: "*Bist du auch schon dort?*"
     ReplyKeyboardMarkup:
         - text: "schon da ⚓"
         - text: "noch auf dem Weg 😱"
@@ -212,7 +210,7 @@ weg_zum_bahnhof:
     address: Bahnhof Golm
     title: Start der Rallye
   - type: message
-    text: Tippe weiter, wenn du angekommen bist!
+    text: Sag Bescheid, wenn du angekommen bist.
     InlineKeyboard:
       - text: "🐾 weiter"
         data: 'action:frage_bahnhof_gif'
