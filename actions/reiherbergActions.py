@@ -101,7 +101,7 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
         )
     elif differenz < -1:
         client.messages.create(
-            body='Es sind {} Züge mehr als du geschätzt hast.',
+            body='Es sind {} Züge mehr als du geschätzt hast.'.format(abs(differenz)),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -113,7 +113,7 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
         )
     elif differenz > 1:
         client.messages.create(
-            body='Es sind {} Züge weniger als du geschätzt hast.',
+            body='Es sind {} Züge weniger als du geschätzt hast.'.format(abs(differenz)),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -167,7 +167,7 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate, context):
         )
     elif differenz < -1:
         client.messages.create(
-            body='Es sind {} Meter mehr als du geschätzt hast.',
+            body='Es sind {} Meter mehr als du geschätzt hast.'.format(abs(differenz)),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -179,7 +179,7 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate, context):
         )
     elif differenz > 1:
         client.messages.create(
-            body='Es sind {} Meter weniger als du geschätzt hast.',
+            body='Es sind {} Meter weniger als du geschätzt hast.'.format(abs(differenz)),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
