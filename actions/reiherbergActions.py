@@ -35,11 +35,14 @@ s3_client = session.client('s3',
                         aws_secret_access_key=os.getenv('SPACES_SECRET'))
 
 def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
-    im_bytes = requests.get(update.MediaUrl0, allow_redirects=True).content
+    im1_bytes = requests.get(update.MediaUrl0, allow_redirects=True).content
 
-    im_file = BytesIO(im_bytes) # convert image to file-like object
-    im1 = Image.open(im_file)   # img is now PIL Image object
-    im2 = Image.open('assets/bahnhof_alt.jpg')
+    im1_file = BytesIO(im1_bytes) # convert image to file-like object
+    im1 = Image.open(im1_file)   # img is now PIL Image object
+
+    im2_bytes = requests.get("https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg").content
+    im2_file = BytesIO(im2_bytes) # convert image to file-like object
+    im2 = Image.open(im2_file)
 
     gif = utils.generate_gif(im1, im2)
 
