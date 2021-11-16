@@ -217,8 +217,6 @@ frage_weinmeisterstrasse_aufloesung:
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/02_Golmer_Wein.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
-  - type: message
-    text: 🍷
     InlineKeyboard:
       - text: "💡 mehr Infos"
         data: "action:info_weinmeister"

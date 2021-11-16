@@ -4,7 +4,7 @@ start:
   - type: function
     func: default_data
   - type: sticker
-    id: 'CAACAgIAAxkBAAIPCWFlYP0m7Qmrt50cDv5_pbH_nfV3AAIbEwACBfGpSkKoz6rqioSCIQQ'
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/stickerpaket/Hallo_darkmode_512x512px.webp
   - type: function
     func: default_name
   - type: message
