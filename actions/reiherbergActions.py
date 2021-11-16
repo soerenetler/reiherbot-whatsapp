@@ -12,8 +12,12 @@ from actions.utils import log
 from WhatsAppUpdate import WhatsAppUpdate
 
 import logging
+import requests
 
 from configparser import ConfigParser
+from datetime import datetime
+
+import boto3
 
 config = ConfigParser()
 config.read("config.ini")
@@ -23,19 +27,35 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 logger = logging.getLogger(__name__)
 
+session = boto3.session.Session()
+s3_client = session.client('s3',
+                        region_name=config["space"]["region_name"],
+                        endpoint_url=config["space"]["endpoint_url"],
+                        aws_access_key_id=os.getenv('SPACES_KEY'),
+                        aws_secret_access_key=os.getenv('SPACES_SECRET'))
 
 def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
-    #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
+    im_bytes = requests.get(update.MediaUrl0, allow_redirects=True).content
 
-    #)  # convert image to file-like object
-    #im1 = Image.open(im_file)   # img is now PIL Image object
-    #im2 = Image.open('assets/bahnhof_alt.jpg')
+    im_file = BytesIO(im_bytes) # convert image to file-like object
+    im1 = Image.open(im_file)   # img is now PIL Image object
+    im2 = Image.open('assets/bahnhof_alt.jpg')
 
-    #gif = utils.generate_gif(im1, im2)
+    gif = utils.generate_gif(im1, im2)
+
+    time_str= str(datetime.now())
+
+    s3_client.put_object(Bucket="reiherbot-whatsapp",
+                      Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.jpg',
+                      Body= gif,
+                      ACL='public',
+                      #Metadata={
+                      #    'x-amz-meta-my-key': 'your-value'
+                      #}
+                      )
 
     # TODO send gif
     # update.message.reply_document(gif)
-    pass
 
 
 def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
