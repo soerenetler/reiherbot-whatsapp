@@ -131,7 +131,7 @@ def reiherberg_medaille(client, update: WhatsAppUpdate, context):
 )
 
 def eval_quiz(client, update: WhatsAppUpdate, context, correct_option_id:str, correct_answer_text:str, wrong_answer_text:str, correct_answer_sticker=None):
-    if update.Body == re.match(correct_option_id, update.Body):
+    if re.match(correct_option_id, update.Body):
         # if correct_answer_sticker:
         #    update.poll_answer.user.send_sticker(correct_answer_sticker)
         client.messages.create(
