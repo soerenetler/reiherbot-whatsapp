@@ -463,7 +463,7 @@ kirche_frage_tipp:
 kirche_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: (🦉|Eule|eule|Eulen|eulen|Schleiereule|Schleiereulen|schleiereule|schleiereulen|Kirchturm|kirchturm||1)
+    correct_option_id: (🦉|Eule|eule|Eulen|eulen|Schleiereule|Schleiereulen|schleiereule|schleiereulen|Kirchturm|kirchturm|1)
     correct_answer_text: "Stimmt {name}!"
     wrong_answer_text: "Das war es nicht!"
   - type: message
@@ -617,7 +617,7 @@ frage_feuerwehr:
       Golm hat seit 110 Jahren eine eigene Freiwillige Feuerwehr.
       Viel Golmerinnen und Golmer engagieren sich in der Feuerwehr oder ihrem Förderverein.
   - type: poll
-    question: Weißt du, wofür der Turm genutzt wird?
+    question: "*Weißt du, wofür der Turm genutzt wird?*"
     options:
       - "🔭 Das ist ein *Ausguck*, von dem aus Brände gesichtet wurden."
       - "💧 Die *Schläuche* werden zum Trocknen darin aufgehangen."
@@ -742,11 +742,13 @@ blick_science_park:
       Siehst du die Gebäude am Horizont? 🌇
       Das ist der Potsdam Science Park.
       Du kannst ihn auch online entdecken:
-    InlineKeyboard:
-      - text: "🚀 Eindrucksvolle Drohnenbilder"
-        url: "https://potsdam-sciencepark.de/der-park/#rundflug-potsdam-science-park"
-      - text: "🧭 Interaktive Karte"
-        url: "https://potsdam-sciencepark.de/?map=open"
+  - type: message
+    text: |
+          🚀 Eindrucksvolle Drohnenbilder
+          https://potsdam-sciencepark.de/der-park/#rundflug-potsdam-science-park
+
+          🧭 Interaktive Karte
+          https://potsdam-sciencepark.de/?map=open
   - type: message
     text: Viel Spaß!
     InlineKeyboard:
@@ -763,10 +765,8 @@ ende_bahnhof:
       Unsere Tour ist hier zu Ende.
       Ich hoffe, du hattest viel Spaß und konntest Golm von einer neuen Seite kennenlernen.
       Auf jeden Fall hast du dir die Reiherberg-Medaille verdient!
-  - type: function
-    func: reiherberg_medaille
-  - type: sticker
-    id: CAACAgIAAxkBAAIltV-Wn3-dJmK4HqhloT5ahNmlbJYHAAIBAANwgCcYrK_-hlK8LIQbBA
+  - type: photo
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Medaille_04_Reiherberg_512x459.png
   - type: message
     text: Sag uns gern auch deine Meinung zum Rundgang.
     InlineKeyboard:
