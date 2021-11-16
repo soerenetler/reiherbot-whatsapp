@@ -58,7 +58,7 @@ def bot():
     print("Current state: {}".format(icoming_state))
     print("Update: {}".format(str(request.values)))
 
-    for handler in states_handler[icoming_state]:
+    for handler in prechecks + states_handler[icoming_state]:
         print("Filter Eval: {}".format(handler))
         if handler.check_update(update):
             print("Filter True: {}".format(handler))
