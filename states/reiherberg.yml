@@ -2,6 +2,14 @@ BAHNHOF_FRAGE_GIF:
   - handler: MessageHandler
     filter: photo
     action: frage_bahnhof_gif_aufloesung
+  
+  - handler: CommandHandler
+    command: weiter
+    action: frage_bahnhof_gif_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: frage_bahnhof_gif_aufloesung
 
   - handler: TypeHandler
     type: Update

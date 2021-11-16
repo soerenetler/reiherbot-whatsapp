@@ -36,37 +36,38 @@ s3_client = session.client('s3',
 
 
 def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
-    im1_bytes = requests.get(update.MediaUrl0, allow_redirects=True).content
+    if update.MediaUrl0:
+        im1_bytes = requests.get(update.MediaUrl0, allow_redirects=True).content
 
-    im1_file = BytesIO(im1_bytes)  # convert image to file-like object
-    im1 = Image.open(im1_file)   # img is now PIL Image object
+        im1_file = BytesIO(im1_bytes)  # convert image to file-like object
+        im1 = Image.open(im1_file)   # img is now PIL Image object
 
-    im2_bytes = requests.get(
-        "https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg").content
-    im2_file = BytesIO(im2_bytes)  # convert image to file-like object
-    im2 = Image.open(im2_file)
+        im2_bytes = requests.get(
+            "https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg").content
+        im2_file = BytesIO(im2_bytes)  # convert image to file-like object
+        im2 = Image.open(im2_file)
 
-    gif = utils.generate_gif(im2, im1)
+        gif = utils.generate_gif(im2, im1)
 
-    time_str = str(round(time.time() * 1000))
+        time_str = str(round(time.time() * 1000))
 
-    s3_client.put_object(Bucket="reiherbot-whatsapp",
-                         Key="bahnhof_gif_gif" + "/" + time_str  + "_" +
-                         str(update.WaId) + '.gif',
-                         Body=gif,
-                         ACL='public-read',
-                         ContentType='image/gif'
-                         # Metadata={
-                         #    'x-amz-meta-my-key': 'your-value'
-                         # }
-                         )
+        s3_client.put_object(Bucket="reiherbot-whatsapp",
+                            Key="bahnhof_gif_gif" + "/" + time_str  + "_" +
+                            str(update.WaId) + '.gif',
+                            Body=gif,
+                            ACL='public-read',
+                            ContentType='image/gif'
+                            # Metadata={
+                            #    'x-amz-meta-my-key': 'your-value'
+                            # }
+                            )
 
-    client.messages.create(
-        media_url="https://reiherbot-whatsapp.fra1.digitaloceanspaces.com/bahnhof_gif_gif/" +
-        time_str + "_" + str(update.WaId) + '.gif',
-        from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
-        to=update.From
-    )
+        client.messages.create(
+            media_url="https://reiherbot-whatsapp.fra1.digitaloceanspaces.com/bahnhof_gif_gif/" +
+            time_str + "_" + str(update.WaId) + '.gif',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
 
 
 def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
