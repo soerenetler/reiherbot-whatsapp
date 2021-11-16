@@ -71,7 +71,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
 
 
 def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
-    schaetzung = int(update.Body)
+    schaetzung = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 106
     if schaetzung == echter_wert:
         client.messages.create(
@@ -88,6 +88,32 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
     else:
         client.messages.create(
             body='Nicht ganz!',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+
+    differenz = schaetzung - echter_wert
+    if differenz == -1:
+        client.messages.create(
+            body='Es ist eine Zug mehr als du geschätzt hast',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz < -1:
+        client.messages.create(
+            body='Es sind {} Züge mehr als du geschätzt hast.',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz == 1:
+        client.messages.create(
+            body='Es ist eine Zug weniger als du geschätzt hast.',
+            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
+            to=update.From
+        )
+    elif differenz > 1:
+        client.messages.create(
+            body='Es sind {} Züge weniger als du geschätzt hast.',
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
