@@ -55,10 +55,10 @@ class Action():
                     to=update.From
                 )
             elif item["type"] == "poll":
-                message = "*" + item["question"] + "*/n"
+                message = "*" + item["question"] + "*\n"
                 numbers = ["1️⃣ ","2️⃣ ","3️⃣ ","4️⃣ ","5️⃣ ","6️⃣ "]
                 for number, option in zip(numbers, item["options"]):
-                    message += number + option + "/n"
+                    message += number + option + "\n"
                 client.messages.create(
                     body=message,
                     from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
