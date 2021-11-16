@@ -24,19 +24,19 @@ def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
     echter_wert = 106
     if schaetzung == echter_wert:
         client.messages.create(
-            body='Nicht schlecht! (Das ist brandenburgisch für "gut gemacht!") 😉',
+            body='Not bad! You nailed it 😉',
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     elif schaetzung >= echter_wert-echter_wert*0.2 and schaetzung <= echter_wert+echter_wert*0.2:
         client.messages.create(
-            body='Du bist schon nah dran!',
+            body='That is close!',
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
-            body='Nicht ganz!',
+            body='Not quite right!',
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -46,19 +46,19 @@ def eval_schaetzfrage_reiherberg(client, update: WhatsAppUpdate, context):
     echter_wert = 68
     if schaetzung == echter_wert:
         client.messages.create(
-            body='Richtig!'.format(name=context["name"]),
+            body='Correct!'.format(name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     elif schaetzung >= echter_wert-echter_wert*0.1 and schaetzung <= echter_wert+echter_wert*0.1:
         client.messages.create(
-            body='Fast!'.format(name=context["name"]),
+            body='Close!'.format(name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
-            body='Knapp daneben!'.format(name=context["name"]),
+            body='Not quite right!'.format(name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -75,7 +75,7 @@ def eval_kirche_wortraetsel(client, update: WhatsAppUpdate, context):
         )
     else:
         client.messages.create(
-            body='Fast!'.format(name=context["name"]),
+            body="No, that's not the correct answer!".format(name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
@@ -85,14 +85,14 @@ def eval_storchenbank(client, update: WhatsAppUpdate, context):
     echter_wert = 2012
     if antwort.lower() == echter_wert:
         client.messages.create(
-            body='Du hast die Tafel also entdeckt! Dort werden die Rückkehrzeiten und der Nachwuchs des Storchenpaares festgehalten.'.format(
+            body='You found the board! All the return dates and the litter of the stork family are marked here.'.format(
                 name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From
         )
     else:
         client.messages.create(
-            body='Fast! Neben der Storchenbank findest du eine Tafel, auf der die Rückkehrzeiten und der Nachwuchs des Storchenpaares festgehalten werden.'.format(
+            body='Close! Next to the bench there is a board with all the return dates and the litter of the stork family.'.format(
                 name=context["name"]),
             from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
             to=update.From

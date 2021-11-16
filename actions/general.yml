@@ -185,7 +185,7 @@ en_startpunkt:
   - type: message
     text: Our tour starts at the train station in Golm. I'm waiting for you directly infront of the orange building. 🚉
   - type: message
-    text: Are you already there?
+    text: "*Are you already there?*"
     ReplyKeyboardMarkup:
         - text: "I'm there ⚓"
         - text: "On my way 😱"
@@ -226,7 +226,7 @@ en_weg_zum_bahnhof:
     address: Station Golm
     title: Start
   - type: message
-    text: _🪶 Write *continue* when you arrived!
+    text: _🪶 Write *continue* when you arrived!_
 
 cancel:
   - type: message
