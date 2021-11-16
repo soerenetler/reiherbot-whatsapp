@@ -69,7 +69,7 @@ EN_WEG01:
 
   - handler: TypeHandler
     type: Update
-    action: en_continue_tipp
+    action: en_weiter_tipp
 
 EN_FRAGE_QUIZ:
   - handler: PollAnswerHandler
