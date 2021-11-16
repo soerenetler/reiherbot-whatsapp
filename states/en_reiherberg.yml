@@ -1,4 +1,11 @@
 EN_BAHNHOF_FRAGE_GIF:
+  - handler: CommandHandler
+    command: weiter
+    action: en_frage_bahnhof_gif_aufloesung
+  - handler: MessageHandler
+    filter: regex
+    regex: WEITER_PATTERN
+    action: en_frage_bahnhof_gif_aufloesung
   - handler: MessageHandler
     filter: photo
     action: en_frage_bahnhof_gif_aufloesung
@@ -438,11 +445,11 @@ EN_RUECKWEG_BAHNHOF_2:
 EN_BAHNHOF_UEBERFUERUNG:
   - handler: CommandHandler
     command: weiter
-    action: en_bahnhof_ueberfuehrung
+    action: en_blick_science_park
   - handler: MessageHandler
     filter: regex
     regex: WEITER_PATTERN
-    action: en_bahnhof_ueberfuehrung
+    action: en_blick_science_park
 
   - handler: TypeHandler
     type: Update

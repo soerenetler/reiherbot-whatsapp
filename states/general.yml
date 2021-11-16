@@ -130,7 +130,7 @@ EN_DATENSCHUTZ:
 
   - handler: TypeHandler
     type: Update
-    action: datenschutz_tipp
+    action: en_datenschutz_tipp
 
 STARTPUNKT:
   - handler: MessageHandler
@@ -168,6 +168,13 @@ EN_STARTPUNKT:
     action: en_frage_bahnhof_gif
   - handler: CommandHandler
     command: "yes"
+    action: en_frage_bahnhof_gif
+  - handler: MessageHandler
+    filter: regex
+    regex: "^(Continue|continue|next|Next)$"
+    action: en_frage_bahnhof_gif
+  - handler: CommandHandler
+    command: "continue"
     action: en_frage_bahnhof_gif
 
   - handler: MessageHandler

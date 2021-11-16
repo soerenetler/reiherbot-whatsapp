@@ -121,10 +121,10 @@ en_datenschutz:
   - type: message
     text: 'Cool, dass du da bist, {name}'
   - type: message
-    text: To improve the guide we would like to collect some user data.
+    text: To improve the guide we would like to collect some user data. More information here www.reiherbot.de/datenschutz
   - type: message
     parse_mode: MarkdownV2
-    text: Are you ok with that? More information here www.reiherbot.de/datenschutz
+    text: "*Are you ok with that?*"
     disable_web_page_preview: False
     ReplyKeyboardMarkup:
         - text: "Yes, sure 🌻"
@@ -226,10 +226,7 @@ en_weg_zum_bahnhof:
     address: Station Golm
     title: Start
   - type: message
-    text: Click the button below, when you have arrived!
-    InlineKeyboard:
-      - text: "🐾 continue"
-        data: 'action:en_frage_bahnhof_gif'
+    text: _🪶 Write *continue* when you arrived!
 
 cancel:
   - type: message

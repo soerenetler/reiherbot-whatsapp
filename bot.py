@@ -31,7 +31,7 @@ general_actions = read_action_yaml("actions/general.yml", action_functions={
                                          **generalActions.action_functions, **reiherbergActions.action_functions, **writeActions.action_functions})
 reiherberg_actions = read_action_yaml("actions/reiherberg.yml", action_functions={
                                          **reiherbergActions.action_functions, **writeActions.action_functions})
-en_reiherberg_actions = read_action_yaml("actions/en_reiherberg.yml", action_functions={
+en_reiherberg_actions = read_action_yaml("actions/en_reiherberg.yml", action_functions={**reiherbergActions.action_functions,
                                          **en_reiherbergActions.action_functions, **writeActions.action_functions})
 
 prechecks = [CommandHandler('cancel', general_actions["cancel"]),
