@@ -92,8 +92,8 @@ class TextFilter:
 
 class PhotoFilter:
     def __call__(self, update: WhatsAppUpdate) -> bool:
-        return update.MediaContentType0.startswith("image")
+        return update.MediaContentType0 and update.MediaContentType0.startswith("image")
 
 class VoiceFilter:
     def __call__(self, update: WhatsAppUpdate) -> bool:
-        return update.MediaContentType0.startswith("audio")
+        return update.MediaContentType0 and update.MediaContentType0.startswith("audio")
