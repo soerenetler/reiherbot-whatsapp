@@ -6,7 +6,7 @@ START_START:
 START:
   - handler: MessageHandler
     filter: regex
-    regex: ^(🥨|Deutsch|deutsch|german|German)$
+    regex: (💂‍♀️|💂‍♂️|💂|Englisch|englisch|english|English)
     action: en_name
   - handler: CommandHandler
     command: english
@@ -14,7 +14,7 @@ START:
 
   - handler: MessageHandler
     filter: regex
-    regex: ^(💂‍♀️|💂‍♂️|💂|Englisch|englisch|english|English)$
+    regex: (🥨|Deutsch|deutsch|german|German)
     action: name
   - handler: CommandHandler
     command: deutsch
