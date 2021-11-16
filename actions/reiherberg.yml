@@ -24,7 +24,7 @@ frage_bahnhof_gif_aufloesung:
   - type: message
     text: "So viel hat sich gar nicht geändert, oder?"
   - type: message
-    text: "🍂 Wir starten hier unseren Rundgang. Mit *weiter* kommst du immer zum nächsten Schritt."
+    text: "_🪶 Mit *weiter* kommst du immer zum nächsten Schritt._"
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:frage_bahnhof"
@@ -75,6 +75,8 @@ frage_bahnhof_aufloesung:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
+  - type: message
+    text: "_🪶 Denk dran, mit *weiter* geht es weiter._"
   - type: return
     state: BAHNHOF_FRAGE_AUFLOESUNG
 
@@ -100,12 +102,14 @@ frage_quiz:
   - type: message
     text: "🐾"
   - type: poll
-    question: Wusstest du, dass wir Reiher die Wappentiere von Golm sind? Was meinst du, woran das liegt?
+    question: Wusstest du, dass wir Reiher die Wappentiere von Golm sind? *Was meinst du, woran das liegt?*
     options:
-      - "Kaiser Friedrichs IV. züchtete in Golm Reiher für den Schlosspark Sanssouci."
-      - "In den Mooren rund um Golm lebten viele Reiher."
-      - "Reiher stehen mythologisch für gute Ernten."
-    correct_option_id: "(2|Moor)"
+      - "1️⃣ Kaiser Friedrichs IV. züchtete in Golm Reiher für den *Schlosspark* Sanssouci."
+      - "2️⃣ In den *Mooren* rund um Golm lebten viele Reiher."
+      - "3️⃣ Reiher stehen mythologisch für gute *Ernten*."
+    correct_option_id: "(Moor|Moore|moor|moore|Reiher in Moore|Reiher in moore|Reiher moor|Reiher moore|2)"
+  - type: message
+    text: 🪶 Antworte mit einem der Symbole oder einem Stichwort
   - type: return
     state: FRAGE_QUIZ
 
@@ -116,7 +120,7 @@ frage_quiz_tipp:
 frage_quiz_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(2|Moor)"
+    correct_option_id: "(Moor|Moore|moor|moore|Reiher in Moore|Reiher in moore|Reiher moor|Reiher moore|2)"
     correct_answer_text: "Richtig, {name} 🎉"
     wrong_answer_text: "Nicht ganz!"
   - type: sticker
@@ -137,7 +141,7 @@ weg_01a:
   - type: message
     text: "Folge dem Fußweg, bis du an eine kleine Treppe gelangst!"
   - type: message
-    text: Wenn du genau hinschaust, kannst du einen Berliner U-Bahnhof entdecken! 🔍 Beachte besonders die Grundstücke auf der linken Seite.
+    text: Wenn du genau hinschaust, kannst du auf dem nächsten Wegabschnitt einen Berliner U-Bahnhof entdecken! 🔍 Beachte besonders die Grundstücke auf der linken Seite.
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:frage_ubahn"
@@ -150,9 +154,9 @@ frage_ubahn:
   - type: poll
     question: Hast du die Berliner U-Bahn-Station entdecken können? 🚇 Welche war es?
     options:
-      - "Kurfürstendamm"
-      - "Unter den Linden"
-      - "Zoologischer Garten"
+      - "1️⃣ Kurfürstendamm"
+      - "2️⃣ Unter den Linden"
+      - "3️⃣ Zoologischer Garten"
     correct_option_id: 0
   - type: return
     state: FRAGE_UBAHN
@@ -164,7 +168,7 @@ frage_ubahn_tipp:
 frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(Kurfürstendamm|kurfürstendamm|Kurfuerstendamm|kurfuerstendamm)"
+    correct_option_id: "(Kurfürstendamm|kurfürstendamm|kur fürsten damm|Kur fürsten damm|Kurfuerstendamm|kurfuerstendamm|1)"
     correct_answer_text: "Richtig, {name} 🎉 es war der Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Hast du das Schild übersehen? Die richtige Antwort war Kurfürstendamm!"
@@ -196,10 +200,10 @@ frage_weinmeisterstrasse:
   - type: poll
     question: Warum wird in Golm kein Wein mehr angebaut?
     options:
-      - "🤑 Durch eine Steuer wurde der Weinanbau teurer."
-      - "🥶 Im kalten Winter 1745 erfroren die Reben."
-      - "🤮 Man merkte, dass der eigene Wein nicht schmeckt."
-      - "🤑🥶🤮 Alle Gründe führten dazu."
+      - "🤑 Durch eine *Steuer* wurde der Weinanbau teurer."
+      - "🥶 Im kalten *Winter* 1745 erfroren die Reben."
+      - "🤮 Man merkte, dass der eigene Wein nicht *schmeckt*."
+      - "🤑🥶🤮 *Alle Gründe* führten dazu."
     correct_option_id: 3
   - type: return
     state: FRAGE_WEINMEISTERATRASSE
@@ -254,7 +258,7 @@ fehlerbild_reiherberg_tipp:
 fehlerbild_reiherberg_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: (Supermarktschild|Schild|4)
+    correct_option_id: (🛒|Supermarktschild|supermarktschild|supermarkt|Supermarkt|Super markt|Super Markt|super markt|Super Markt Schild|super markt schild|Super markt schild|4)
     correct_answer_text: Stimmt {name}! Im Dorfkern gibt es keinen Supermarkt mehr. 🛍️'
     wrong_answer_text: "Das war nicht der Fehler!"
   - type: message
@@ -339,7 +343,9 @@ foto_reiherberg:
     parse_mode: MarkdownV2
     text: >
       Knipse ein Foto und schicke es mir zu. 📸
-      Die schönsten Aufnahmen findest du auf unserer [Website](https://reiherbot.de) .
+      Die schönsten Aufnahmen findest du auf unserer Website: https://reiherbot.de .
+
+      _🪶 Schick mir ein *Foto* von dem Ausblick oder schreibe *weiter*._
     InlineKeyboard:
       - text: "🧀 Cheese"
         data: "action:foto_reiherberg_anweisung"
@@ -365,10 +371,10 @@ foto_reiherberg_aufloesung:
     text: "Tolle Aussicht, oder? "
   - type: media_group
     files:
-      - "assets/reiherberg/reiherberg14.jpg"
-      - "assets/reiherberg/reiherberg18.jpg"
-      - "assets/reiherberg/reiherberg17.jpg"
-      - "assets/reiherberg/reiherberg02.jpg"
+      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg14.jpg"
+      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg18.jpg"
+      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg17.jpg"
+      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg02.jpg"
   - type: message
     text: >
       Hier sind Bilder, die andere Bergsteigende gemacht haben.
@@ -422,7 +428,7 @@ kirche_wortraetsel:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Bilderrätsel.png"
   - type: message
     text: >
-      Schreib mir die Lösung
+      _🪶 Schreib mir die Lösung._
   - type: return
     state: KIRCHE_WORTRAETSEL
 
@@ -441,11 +447,11 @@ kirche_frage:
   - type: message
     text: Nach ihrer Sanierung 2007 wurde die Kirche vom Naturschutzbund (NABU) ausgezeichnet.
   - type: poll
-    question: Was macht die Kaiser-Friedrich-Kirche besonders aus Sicht des NABUs?
+    question: Was macht die Kaiser-Friedrich-Kirche besonders?
     options:
-      - "🦉 Im Kirchturm nisten dauerhaft Schleiereulen."
-      - "🏨 Im Mauerwerk der Kirche sind Insektenhotels eingelassen."
-      - "🐉 Auf der Wiese hinter der Kirche leben besonders viele Gottesanbeterinnen."
+      - "🦉 Im Kirchturm nisten dauerhaft *Schleiereulen*."
+      - "🏨 Im Mauerwerk der Kirche sind *Insektenhotels* eingelassen."
+      - "🐉 Auf der Wiese hinter der Kirche leben besonders viele *Gottesanbeterinnen*."
     correct_option_id: 0
   - type: return
     state: FRAGE_KIRCHE
@@ -457,15 +463,13 @@ kirche_frage_tipp:
 kirche_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: (1|🦉|Schleiereulen)
+    correct_option_id: (🦉|Eule|eule|Eulen|eulen|Schleiereule|Schleiereulen|schleiereule|schleiereulen|Kirchturm|kirchturm||1)
     correct_answer_text: "Stimmt {name}!"
     wrong_answer_text: "Das war es nicht!"
   - type: message
     text: Neben Schleiereulen nisten hier unter anderem auch Turmfalken, Mauersegler und Dohlen.
   - type: photo
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Dohle.jpg"
-  - type: message
-    text: "Willst du mehr über die Kirche und ihre Bewohner:innen erfahren?"
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/06_Kaiser-Friedrich-Kirche.mp3
     title: "Kaiser-Friedrich-Kirche"
