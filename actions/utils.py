@@ -6,7 +6,7 @@ def generate_gif(im1, im2):
     im2 = im2.resize((round(im1.size[0]), round(im1.size[1])))
 
     images = []
-    frames = 10
+    frames = 6
 
     for i in range(frames+1):
         im = Image.blend(im1, im2, i/frames)
