@@ -70,7 +70,7 @@ frage_bahnhof_aufloesung:
       🕛 zur vollen Stunde von Gleis 2 
       🕡 zur halben Stunde von Gleis 1
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.ogg"
+    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/01_Bahnhof_Golm.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: return
