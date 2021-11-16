@@ -19,19 +19,6 @@ from configparser import ConfigParser
 config = ConfigParser()
 config.read("config.ini")
 
-def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
-    #im_bytes = update.message.photo[-1].get_file().download_as_bytearray()
-
-    #im_file = BytesIO(im_bytes)  # convert image to file-like object
-    #im1 = Image.open(im_file)   # img is now PIL Image object
-    #im2 = Image.open('assets/bahnhof_alt.jpg')
-
-    #gif = utils.generate_gif(im1, im2)
-
-    # TODO send gif
-    #update.message.reply_document(gif)
-    pass
-
 def eval_schaetzfrage_bahnhof(client, update: WhatsAppUpdate, context):
     schaetzung = int(re.findall(r"\d{1,}", update.Body)[0])
     echter_wert = 106
@@ -130,27 +117,9 @@ def reiherberg_medaille(client, update: WhatsAppUpdate, context):
     to=update.From
 )
 
-def eval_quiz(client, update: WhatsAppUpdate, context, correct_option_id:str, correct_answer_text:str, wrong_answer_text:str, correct_answer_sticker=None):
-    if re.match(correct_option_id, update.Body):
-        # if correct_answer_sticker:
-        #    update.poll_answer.user.send_sticker(correct_answer_sticker)
-        client.messages.create(
-            body=correct_answer_text.format(name=context["name"]),
-            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
-            to=update.From
-        )
-    else:
-        client.messages.create(
-            body=wrong_answer_text.format(name=context["name"]),
-            from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
-            to=update.From
-        )
-
-action_functions = {"send_bahnhof_gif": send_bahnhof_gif,
-                    "eval_schaetzfrage_bahnhof": eval_schaetzfrage_bahnhof,
+action_functions = {"eval_schaetzfrage_bahnhof": eval_schaetzfrage_bahnhof,
                     "eval_schaetzfrage_reiherberg": eval_schaetzfrage_reiherberg,
                     "eval_kirche_wortraetsel": eval_kirche_wortraetsel,
                     "eval_storchenbank": eval_storchenbank,
-                    "reiherberg_medaille": reiherberg_medaille,
-                    "eval_quiz": eval_quiz
+                    "reiherberg_medaille": reiherberg_medaille
                     }

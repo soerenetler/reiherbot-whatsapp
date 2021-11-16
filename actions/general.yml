@@ -11,15 +11,12 @@ start:
     parse_mode: MarkdownV2
     text: |
           Hi, ich bin Ronni der Reiher! Ich führe dich heute durch Golm.
-          Möchtest du den Rundgang auf *Englisch* oder auf *Deutsch* machen?
+          Möchtest du den Rundgang auf 💂‍♀️*Englisch* oder auf 🥨*Deutsch* machen?
   - type: message
     parse_mode: MarkdownV2
     text: |
           _Hi, I'm Ronni the heron! I will be your guide today._
-          _Do you want to take the tour in *German* or *English*?_
-    ReplyKeyboardMarkup:
-      - text: "Auf Deutsch 🥨"
-      - text: "In English 💂‍♀️"
+          _Do you want to take the tour in 🥨*German* or 💂‍♀️*English*?_
   - type: return
     state: START
 
