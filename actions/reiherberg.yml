@@ -516,13 +516,11 @@ frage_storchenbank_aufloesung:
     text: >
       Wenn du auf der Storchenbank sitzt, steht rechts von dir die Dorfkapelle.
       Das ist das älteste Gebäude in ganz Potsdam.
-      Hier finden regelmäßig Veranstaltungen statt, über die du vom [Kulturverein](https://www.kultur-in-golm.de/) mehr erfahren kannst.
+      Hier finden regelmäßig Veranstaltungen statt, über die du vom Kulturverein (https://www.kultur-in-golm.de/) mehr erfahren kannst.
   - type: audio
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/07_Die_alte_Kapelle.mp3
     title: "Kapelle"
     performer: "Reiherbot"
-  - type: message
-    text: ⛪️
     InlineKeyboard:
       - text: "💡 mehr Infos"
         data: "action:info_kapelle"
@@ -621,9 +619,9 @@ frage_feuerwehr:
   - type: poll
     question: Weißt du, wofür der Turm genutzt wird?
     options:
-      - "Das ist ein Ausguck, von dem aus Brände gesichtet wurden."
-      - "Die Schläuche werden zum Trocknen darin aufgehangen."
-      - "Die Sirene sitzt weit oben im Turm, um besser gehört zu werden."
+      - "🔭 Das ist ein *Ausguck*, von dem aus Brände gesichtet wurden."
+      - "💧 Die *Schläuche* werden zum Trocknen darin aufgehangen."
+      - "📢 Die *Sirene* sitzt weit oben im Turm, um besser gehört zu werden."
     correct_option_id: 1
   - type: return
     state: FRAGE_FEUERWEHR
@@ -635,7 +633,7 @@ frage_feuerwehr_tipp:
 frage_feuerwehr_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: (2|Schläuche|Trocknen)
+    correct_option_id: (Schläuche|schläuche|schlauch|Schlauch|Trocknen|trocknen|trocken|Trocken|aufgehangen|aufhängen|Schläuche aufhängen|schläuche aufhängen|schläuche trocknen|schlauch trocknen|2)
     correct_answer_text: "Stimmt {name}!"
     wrong_answer_text: "Nicht ganz!"
   - type: message
@@ -647,7 +645,7 @@ frage_feuerwehr_aufloesung:
     performer: "Reiherbot"
   - type: message
     parse_mode: MarkdownV2
-    text: Mehr zur Freiwillige Feuerwehr findest du [hier](https://feuerwehr-golm.jimdofree.com/).
+    text: Mehr zur Freiwillige Feuerwehr findest du unter https://feuerwehr-golm.jimdofree.com/.
     InlineKeyboard:
       - text: "👩‍🚒 Feuerwehrfrauen"
         data: "action:info_feuerwehr"

@@ -442,11 +442,11 @@ RUECKWEG_BAHNHOF_2:
 BAHNHOF_UEBERFUERUNG:
   - handler: CommandHandler
     command: weiter
-    action: bahnhof_ueberfuehrung
+    action: blick_science_park
   - handler: MessageHandler
     filter: regex
     regex: WEITER_PATTERN
-    action: bahnhof_ueberfuehrung
+    action: blick_science_park
 
   - handler: TypeHandler
     type: Update
