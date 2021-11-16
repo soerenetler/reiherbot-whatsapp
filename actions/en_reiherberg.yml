@@ -98,9 +98,9 @@ en_frage_quiz:
   - type: poll
     question: Did you know that herons are the heraldic animals of Golm? Why do you think is it so?
     options:
-      - "The King of Prussia Friedrich IV bred herons in Golm for the Sanssouci Park."
-      - "Many herons lived in the moors around Golm."
-      - "In mythology herons stand for good harvests."
+      - "1️⃣The King of Prussia Friedrich IV bred herons in Golm for the *Sanssouci* Park."
+      - "2️⃣ Many herons lived in the *moors* around Golm."
+      - "3️⃣ In *mythology* herons stand for good harvests."
     correct_option_id: 1
   - type: return
     state: EN_FRAGE_QUIZ
@@ -112,7 +112,7 @@ en_frage_quiz_tipp:
 en_frage_quiz_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(2|moor)"
+    correct_option_id: "(2️⃣|2|moor)"
     correct_answer_text: "Correct, {name} 🎉"
     wrong_answer_text: "Not quite!"
   - type: sticker
@@ -147,9 +147,9 @@ en_frage_ubahn:
   - type: poll
     question: "Have you discovered the Berlin underground station? If so, do you remember which U-Bahn station it was?"
     options:
-      - "Kurfürstendamm"
-      - "Unter den Linden"
-      - "Zoologischer Garten"
+      - "1️⃣ Kurfürstendamm"
+      - "2️⃣ Unter den Linden"
+      - "3️⃣ Zoologischer Garten"
     correct_option_id: 0
   - type: return
     state: EN_FRAGE_UBAHN
@@ -161,7 +161,7 @@ en_frage_ubahn_tipp:
 en_frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(Kurfürstendamm|Kurfuerstendamm)"
+    correct_option_id: "(1️⃣|Kurfürstendamm|Kurfuerstendamm)"
     correct_answer_text: "Correct, {name} 🎉 it was the Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Did you miss the sign? The correct answer was Kurfürstendamm!"
@@ -217,8 +217,6 @@ en_frage_weinmeisterstrasse_aufloesung:
     url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/02_wine.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
-  - type: message
-    text: 🍷
     InlineKeyboard:
       - text: "🐾 continue"
         data: "action:en_fehlerbild_reiherberg_bank"
@@ -431,9 +429,9 @@ en_kirche_frage:
   - type: poll
     question: The church was awarded with a distinction by the Nature and Biodiversity Conservation Union (NABU). Can you imagine why?
     options:
-      - "Jackdaws nest permanently in the church tower."
-      - "The masonry of the church has insect hotels embedded in the walls of the church."
-      - "The meadow behind the church is home to a particularly large number of praying mantises."
+      - "🦉 *Jackdaws* nest permanently in the church tower."
+      - "🏨 The masonry of the church has *insect hotels* embedded in the walls of the church."
+      - "🐉 The meadow behind the church is home to a particularly large number of *praying mantises*."
     correct_option_id: 0
   - type: return
     state: EN_FRAGE_KIRCHE
@@ -581,11 +579,11 @@ en_frage_feuerwehr:
       Golm has had its own volunteer fire brigade for 110 years.
       Many people from Golm are still involved in the fire brigade or support it financially.
   - type: poll
-    question: Do you know what the tower is used for?
+    question: "*Do you know what the tower is used for?*"
     options:
-      - "This is a lookout from which fires used to be sighted."
-      - "The fire hoses are hung up there to dry."
-      - "The siren sits high up in the tower to be heard better."
+      - "🔭 This is a *lookout* from which fires used to be sighted."
+      - "💧 The fire *hoses* are hung up there to dry."
+      - "📢 The *siren* sits high up in the tower to be heard better."
     correct_option_id: 1
   - type: return
     state: EN_FRAGE_FEUERWEHR

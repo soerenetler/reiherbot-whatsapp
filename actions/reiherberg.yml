@@ -171,7 +171,7 @@ frage_ubahn_tipp:
 frage_ubahn_aufloesung:
   - type: function
     func: eval_quiz
-    correct_option_id: "(Kurfürstendamm|kurfürstendamm|kur fürsten damm|Kur fürsten damm|Kurfuerstendamm|kurfuerstendamm|1)"
+    correct_option_id: "(1️⃣|Kurfürstendamm|kurfürstendamm|kur fürsten damm|Kur fürsten damm|Kurfuerstendamm|kurfuerstendamm|1)"
     correct_answer_text: "Richtig, {name} 🎉 es war der Kurfürstendamm!"
     correct_answer_sticker: "CAACAgIAAxkBAAIh3GET3cUkXFHa0glqwnGmx7twUiGYAALVDgAC2ECJSAABqI8yWQXxqyAE"
     wrong_answer_text: "Hast du das Schild übersehen? Die richtige Antwort war Kurfürstendamm!"
