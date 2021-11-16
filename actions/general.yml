@@ -40,6 +40,8 @@ en_name:
   - type: message
     text: Nice to meet you!
   - type: message
+    text: "*⚠️ The English version is in beta testing.* There might still be some untranslated messages."  
+  - type: message
     text: May I call you {name}?
   - type: return
     state: EN_NAME
