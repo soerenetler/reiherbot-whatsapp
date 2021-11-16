@@ -15,7 +15,7 @@ import logging
 import requests
 
 from configparser import ConfigParser
-from datetime import datetime
+import time
 
 import boto3
 
@@ -46,7 +46,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
 
     gif = utils.generate_gif(im1, im2)
 
-    time_str= str(datetime.now())
+    time_str= str(round(time.time() * 1000))
 
     s3_client.put_object(Bucket="reiherbot-whatsapp",
                       Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.gif',
