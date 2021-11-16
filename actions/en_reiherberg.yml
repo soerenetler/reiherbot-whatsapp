@@ -725,10 +725,8 @@ en_ende_bahnhof:
       Our tour ends here.
       I hope you had a lot of fun and got to know Golm from a new perspective.
       In any case, you have earned the Reiherberg medal!
-  - type: function
-    func: reiherberg_medaille
-  - type: sticker
-    id: CAACAgIAAxkBAAIltV-Wn3-dJmK4HqhloT5ahNmlbJYHAAIBAANwgCcYrK_-hlK8LIQbBA
+  - type: photo
+    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Medaille_04_Reiherberg_512x459.png
   - type: message
     text: "Here are the next trains:"
   - type: function
