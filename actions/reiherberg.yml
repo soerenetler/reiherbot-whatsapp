@@ -94,7 +94,7 @@ weg01:
     text: |
           Dort treffen wir uns wieder!
 
-          "_🪶 Wie immer kannst du *weiter* schreiben, wenn du da bist._"
+          _🪶 Wie immer kannst du *weiter* schreiben, wenn du da bist._
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:frage_quiz"
@@ -132,6 +132,8 @@ frage_quiz_aufloesung:
     text: |
       In den Mooren um Golm fühlen sie sich wohl.
       Mit etwas Glück kannst du auf unserem Weg einen entdecken.
+
+      _🪶 und mit *weiter* geht es weiter_
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:weg_01a"
@@ -382,6 +384,8 @@ foto_reiherberg_aufloesung:
     text: >
       Hier sind Bilder, die andere Bergsteigende gemacht haben.
       Der Reiherberg ist zu jeder Jahreszeit einen Ausflug wert.
+
+      _🪶 Du kannst dich hier ein wenig ausrugen. Schreibe *weiter*, um die Route fortzusetzen._
     InlineKeyboard:
       - text: "🐾 weiter"
         data: "action:weg_kirche_1"
@@ -692,9 +696,11 @@ rueckweg_bahnhof_1:
   - type: message
     text: "🐾"
   - type: message
-    text: >
+    text: |
       Das war die letzte Etappe auf unserer Tour.
       Folge der Thomas-Müntzer-Straße nach rechts bis zu ihrem Ende.
+
+      _🪶 und schreib *weiter*, wenn du angekommen bist_
     InlineKeyboard:
       - text: "🐾 Weiter"
         data: "action:rueckweg_bahnhof_2"
@@ -705,8 +711,9 @@ rueckweg_bahnhof_2:
   - type: message
     text: "🐾"
   - type: message
-    text: >
-      Biege nach links ab und laufe parallel zu den Bahnschienen, bis du zurück am Bahnhof Golm bist.
+    text: |
+      Biege nach links ab und laufe parallel zu den Bahnschienen, bis du zurück am Bahnhof bist.
+      Dort sehen wir uns wieder.
     InlineKeyboard:
       - text: "🐾 Weiter"
         data: "action:bahnhof_ueberfuehrung"
@@ -753,7 +760,10 @@ blick_science_park:
           🧭 Interaktive Karte
           https://potsdam-sciencepark.de/?map=open
   - type: message
-    text: Viel Spaß!
+    text: |
+          Viel Spaß!
+
+          _🪶 und schreib anschließend *weiter*._
     InlineKeyboard:
       - text: "🐾 Weiter"
         data: "action:ende_bahnhof"

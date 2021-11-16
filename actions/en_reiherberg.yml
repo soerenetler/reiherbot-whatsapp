@@ -5,6 +5,8 @@ en_frage_bahnhof_gif:
     url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg"
   - type: message
     text: "Try to take a picture of the building from the same perspective and send it to me. 📸"
+  - type: message
+    text: _🪶 Just send a *picture* or write *continue* to skip._
   - type: return
     state: EN_BAHNHOF_FRAGE_GIF
 
