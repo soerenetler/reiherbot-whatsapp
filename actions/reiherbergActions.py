@@ -52,7 +52,7 @@ def send_bahnhof_gif(client, update: WhatsAppUpdate, context):
                       Key= "bahnhof_gif_gif" + "/" + time_str +"_"+str(update.ProfileName) + "_" + str(update.WaId) + '.gif',
                       Body= gif,
                       ACL='public-read',
-                      ContentType='ContentType='
+                      ContentType='image/gif'
                       #Metadata={
                       #    'x-amz-meta-my-key': 'your-value'
                       #}
