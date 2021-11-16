@@ -64,12 +64,6 @@ class Action():
                     from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
                     to=update.From
                 )
-            elif item["type"] == "sticker":
-                client.messages.create(
-                    media_url=item["url"],
-                    from_='whatsapp:{}'.format(config["twilio"]["from_number"]),
-                    to=update.From
-                )
 
             elif item["type"] == "function":
                 arguments = {i:item[i] for i in item if i!='type' and i!='func'}
