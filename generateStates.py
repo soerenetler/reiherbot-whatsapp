@@ -68,7 +68,7 @@ class CommandHandler:
         self.callback = callback
 
     def check_update(self, update: WhatsAppUpdate):
-        if update.Body == "/" + self.command:
+        if update.Body.strip("/").lower() == self.command.lower():
             return True
 
 class TypeHandler:
