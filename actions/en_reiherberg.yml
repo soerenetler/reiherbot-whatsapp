@@ -2,7 +2,7 @@ en_frage_bahnhof_gif:
   - type: message
     text: "You are now in front of the railway station building of Golm. In the past it looked like this:"
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/bahnhof_alt.jpg"
+    url: "bahnhof_alt.jpg"
   - type: message
     text: "Try to take a picture of the building from the same perspective and send it to me. 📸"
   - type: message
@@ -65,7 +65,7 @@ en_frage_bahnhof_aufloesung:
       🕛 from platform 2 on the hour 
       🕡 from platform 1 on the half hour
   - type: audio
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/01_station.mp3"
+    url: "audio/en/01_station.mp3"
     title: "Bahnhof Golm"
     performer: "Reiherbot"
   - type: message
@@ -221,9 +221,9 @@ en_frage_weinmeisterstrasse_aufloesung:
   - type: message
     text: The street name Weinmeisterstraße, however, still remains here.
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Weinpresse_Zeichnung.jpg
+    url: Weinpresse_Zeichnung.jpg
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/02_wine.mp3
+    url: audio/en/02_wine.mp3
     title: "Weinmeister"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -240,7 +240,7 @@ en_fehlerbild_reiherberg_bank:
       Look there!
       Here you can already see the signpost to Reiherberg.
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/fehlerbild_reiherberg_bank.jpg
+    url: fehlerbild_reiherberg_bank.jpg
   - type: poll
     question: All right, I admit it, I have made one trick in the picture. Can you spot it?
     options:
@@ -265,7 +265,7 @@ en_fehlerbild_reiherberg_aufloesung:
   - type: message
     text: There used to be a small store here. Today, a small gallery - the art supermarket - is located here.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/03_art_supermarkt.mp3
+    url: audio/en/03_art_supermarkt.mp3
     title: "Supermarkt Golm"
     performer: "Reiherbot"
   - type: message
@@ -289,7 +289,7 @@ en_aufstieg_reiherberg:
       If that's too quiet for you, you can also listen to the legend of Reiherberg on the way.
       Let me know when you reach the viewing platform.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/04_sage.mp3
+    url: audio/en/04_sage.mp3
     title: "Reiherberg Sage"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -304,7 +304,7 @@ en_schaetzfrage_reiherberg:
   - type: message
     text: You have made it! You are now standing on the top of the second highest mountain in Golm. ⛰️
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/Aussicht_Reiherberg.png
+    url: reiherberg/Aussicht_Reiherberg.png
   - type: message
     text: How high do you think Reiherberg is?
   - type: return
@@ -323,7 +323,7 @@ en_schaetzfrage_reiherberg_aufloesung:
       Only the 71-metre-high Ehrenpfortenberg is higher. 
       But the view from Reiherberg is incomparable and invites you to take photos. 🌄
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/05_Reiherberg.mp3
+    url: audio/en/05_Reiherberg.mp3
     title: "Reiherberg"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -363,10 +363,10 @@ en_foto_reiherberg_aufloesung:
     folder: en_reiherberg
   - type: media_group
     urls:
-      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg14.jpg"
-      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg18.jpg"
-      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg17.jpg"
-      - "https://reiherbot-assets.fra1.digitaloceanspaces.com/reiherberg/reiherberg02.jpg"
+      - "reiherberg/reiherberg14.jpg"
+      - "reiherberg/reiherberg18.jpg"
+      - "reiherberg/reiherberg17.jpg"
+      - "reiherberg/reiherberg02.jpg"
   - type: message
     text: >
       These are the pictures other hikers have taken.
@@ -384,7 +384,7 @@ en_weg_kirche_1:
     text: >
       Our path now leads us down the mountain.
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Hier_entlang!.jpg
+    url: Hier_entlang!.jpg
   - type: message
     text: When you leave the viewing platform, follow the path on the far left.
       Go downhill until you reach a junction to the right.
@@ -416,7 +416,7 @@ en_kirche_wortraetsel:
       You are standing in front of the village church of Golm.
       You can find out its name by solving this word puzzle correctly.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Bilderrätsel.png"
+    url: "Bilderrätsel.png"
   - type: message
     text: >
       Text me the solution.
@@ -458,11 +458,11 @@ en_kirche_aufloesung:
   - type: message
     text: Jackdaw is a type of raven, by the way. Here's a picture so you can get a better idea of them.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Dohle.jpg"
+    url: "Dohle.jpg"
   - type: message
     text: Do you want to learn more about the church, or rather continue?
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/06_church.mp3
+    url: audio/en/06_church.mp3
     title: "Kaiser-Friedrich-Kirche"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -508,7 +508,7 @@ en_frage_storchenbank_aufloesung:
       But now it's time to head back, isn't it?
       Don't worry, there are still a few things left to discover. 😉
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/07_chapel.mp3
+    url: audio/en/07_chapel.mp3
     title: "Kapelle"
     performer: "Reiherbot"
   - type: message
@@ -541,13 +541,13 @@ en_schule:
       This building was once the school in Golm.
       To the left of the building, the former schoolyard, was the Golm slide.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Rutschberg_1903.PNG"
+    url: "Rutschberg_1903.PNG"
   - type: message
     text: >
       Among other things, the local council is meeting here today.
       Unfortunately, there is no more sliding here.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/08_school.mp3
+    url: audio/en/08_school.mp3
     title: "Schule und Rodelbahn"
     performer: "Reiherbot"
     InlineKeyboard:
@@ -610,7 +610,7 @@ en_frage_feuerwehr_aufloesung:
   - type: message
     text: This tower is used to dry the hoses after a firefighting job.
   - type: audio
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/audio/en/09_fire_department.mp3
+    url: audio/en/09_fire_department.mp3
     title: "Voluntary fire brigade "
     performer: "Reiherbot"
   - type: message
@@ -682,7 +682,7 @@ en_bahnhof_ueberfuehrung:
   - type: message
     text: There used to be an overpass here to platform 1 on the other side.
   - type: photo
-    url: "https://reiherbot-assets.fra1.digitaloceanspaces.com/Ueberfuehrung.PNG"
+    url: "Ueberfuehrung.PNG"
   - type: message
     text: Google Maps assumes it is still here (as of 2021).
     InlineKeyboard:
@@ -733,7 +733,7 @@ en_ende_bahnhof:
       I hope you had a lot of fun and got to know Golm from a new perspective.
       In any case, you have earned the Reiherberg medal!
   - type: photo
-    url: https://reiherbot-assets.fra1.digitaloceanspaces.com/Medaille_04_Reiherberg_512x459.png
+    url: Medaille_04_Reiherberg_512x459.png
   - type: message
     text: "Here are the next trains:"
   - type: function
