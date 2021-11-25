@@ -4,11 +4,11 @@ from collections import defaultdict
 from digitalguide.whatsapp.generateActions import read_action_yaml
 from digitalguide.whatsapp.generateStates import CommandHandler, read_state_yml
 from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
+from digitalguide import writeActions
 from flask import Flask, Response, request
 from twilio.rest import Client
 
-from actions import (en_reiherbergActions, generalActions, reiherbergActions,
-                     writeActions)
+from actions import (en_reiherbergActions, generalActions, reiherbergActions)
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -22,11 +22,11 @@ user_states = defaultdict(lambda: "START_START")
 user_context = defaultdict(dict)
 
 general_actions = read_action_yaml("actions/general.yml", action_functions={
-                                         **generalActions.action_functions, **reiherbergActions.action_functions, **writeActions.action_functions})
+                                         **generalActions.action_functions, **reiherbergActions.action_functions, **writeActions.whatsapp_action_functions})
 reiherberg_actions = read_action_yaml("actions/reiherberg.yml", action_functions={
-                                         **reiherbergActions.action_functions, **writeActions.action_functions})
+                                         **reiherbergActions.action_functions, **writeActions.whatsapp_action_functions})
 en_reiherberg_actions = read_action_yaml("actions/en_reiherberg.yml", action_functions={**reiherbergActions.action_functions,
-                                         **en_reiherbergActions.action_functions, **writeActions.action_functions})
+                                         **en_reiherbergActions.action_functions, **writeActions.whatsapp_action_functions})
 
 prechecks = [CommandHandler('cancel', general_actions["cancel"]),
              CommandHandler('start', general_actions["start"]),
