@@ -1,6 +1,6 @@
 import logging
 
-from WhatsAppUpdate import WhatsAppUpdate
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
 
 import mongoengine
 import datetime

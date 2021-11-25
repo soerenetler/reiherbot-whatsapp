@@ -1,23 +1,16 @@
-import os
-from PIL import Image
-import re
-
-import base64
-from io import BytesIO
-import yaml
-
-from actions import utils
-from actions.utils import log
-
-from WhatsAppUpdate import WhatsAppUpdate
-
 import logging
-import requests
-
-from configparser import ConfigParser
+import os
+import re
 import time
+from configparser import ConfigParser
+from io import BytesIO
 
 import boto3
+import requests
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
+from PIL import Image
+
+from actions import utils
 
 config = ConfigParser()
 config.read("config.ini")

@@ -1,15 +1,14 @@
-from digitalguide.whatsapp.generateStates import CommandHandler, read_state_yml
-from digitalguide.whatsapp.generateActions import read_action_yaml
-from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
-from flask import Flask, request, Response
-
 import os
-from twilio.rest import Client
-
 from collections import defaultdict
 
-from actions import reiherbergActions, en_reiherbergActions, writeActions, generalActions
+from digitalguide.whatsapp.generateActions import read_action_yaml
+from digitalguide.whatsapp.generateStates import CommandHandler, read_state_yml
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
+from flask import Flask, Response, request
+from twilio.rest import Client
 
+from actions import (en_reiherbergActions, generalActions, reiherbergActions,
+                     writeActions)
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -19,12 +18,7 @@ client = Client(account_sid, auth_token)
 
 app = Flask(__name__)
 
-
-def constant_factory(value):
-    return lambda: value
-
-
-user_states = defaultdict(constant_factory("START_START"))
+user_states = defaultdict(lambda: "START_START")
 user_context = defaultdict(dict)
 
 general_actions = read_action_yaml("actions/general.yml", action_functions={

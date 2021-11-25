@@ -1,4 +1,4 @@
-from WhatsAppUpdate import WhatsAppUpdate
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
 from PIL import Image
 import re
 
