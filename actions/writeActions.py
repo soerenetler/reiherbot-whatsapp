@@ -1,4 +1,4 @@
-from WhatsAppUpdate import WhatsAppUpdate
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
 import boto3
 from datetime import datetime
 import os
