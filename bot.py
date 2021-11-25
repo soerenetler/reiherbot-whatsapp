@@ -1,6 +1,6 @@
-from generateStates import CommandHandler, read_state_yml
-from generateActions import read_action_yaml
-from WhatsAppUpdate import WhatsAppUpdate
+from digitalguide.whatsapp.generateStates import CommandHandler, read_state_yml
+from digitalguide.whatsapp.generateActions import read_action_yaml
+from digitalguide.whatsapp.WhatsAppUpdate import WhatsAppUpdate
 from flask import Flask, request, Response
 
 import os
